@@ -1,0 +1,425 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>body{margin:0}[hidden]{display:none!important}</style></head><body>
+<title>苏黎世一个月 · Züri-Monat</title>
+<style>
+/* Swiss railway look: Helvetica, a white cross on red, a dark departure board for the route,
+   and the dark-blue station sign for each stop. */
+:root{
+  --bg:#f3f2ef; --surface:#ffffff; --ink:#1b1b1b; --muted:#5f6368; --line:#dcdad5;
+  --red:#d52b1e; --red-ink:#ffffff; --board:#1c2433; --board-ink:#f2f2f2; --board-dim:#8e99ab;
+  --sign:#2d327d; --sign-ink:#ffffff; --accent:#d52b1e; --soft:#fbeeec;
+  --ok:#2a6549; --ok-bg:#dfeee6; --bad:#a9342c; --bad-bg:#f6e1df; --gold:#b07d00;
+  --f:'Helvetica Neue',Helvetica,Arial,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#121417; --surface:#1c1f24; --ink:#ececec; --muted:#a2a8b1; --line:#30343b;
+  --red:#d52b1e; --board:#0b0f16; --board-ink:#f2f2f2; --board-dim:#7d889a;
+  --sign:#3a409a; --accent:#ff7b6e; --soft:#3a2321;
+  --ok:#6cc097; --ok-bg:#17302a; --bad:#ec857c; --bad-bg:#3a1f1f; --gold:#e6b94a; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#121417; --surface:#1c1f24; --ink:#ececec; --muted:#a2a8b1; --line:#30343b;
+  --red:#d52b1e; --board:#0b0f16; --board-ink:#f2f2f2; --board-dim:#7d889a;
+  --sign:#3a409a; --accent:#ff7b6e; --soft:#3a2321;
+  --ok:#6cc097; --ok-bg:#17302a; --bad:#ec857c; --bad-bg:#3a1f1f; --gold:#e6b94a; color-scheme:dark }
+
+body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--f)}
+.wrap{max-width:680px;margin:0 auto;padding:20px 16px 64px;display:flex;flex-direction:column;gap:20px}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+p{margin:0}
+a{color:var(--accent)}
+
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+.brand svg{width:34px;height:34px;flex:none;border-radius:3px}
+h1{margin:0;font-size:1.2rem;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+h1 small{display:block;font-size:.8rem;font-weight:400;color:var(--muted)}
+.tabs{display:flex;gap:2px}
+.tabs a{text-decoration:none;color:var(--muted);padding:4px 10px;border-bottom:2px solid transparent}
+.tabs a[aria-current="page"]{color:var(--ink);border-color:var(--red);font-weight:700}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px}
+.card h2{margin:0 0 8px;font-size:1.05rem}
+.muted{color:var(--muted)}
+.small{font-size:.88rem}
+details summary{cursor:pointer;font-weight:700}
+details ul{margin:10px 0 0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+
+/* departure board */
+.board{background:var(--board);color:var(--board-ink);border-radius:8px;overflow:hidden}
+.board-h{display:flex;justify-content:space-between;align-items:baseline;padding:12px 16px 8px;border-bottom:1px solid #ffffff22}
+.board-h b{font-size:1.15rem;letter-spacing:.02em}
+.board-h span{color:var(--board-dim);font-size:.85rem;font-variant-numeric:tabular-nums}
+.row{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:12px 16px;border-bottom:1px solid #ffffff14;text-decoration:none;color:inherit}
+.row:last-child{border-bottom:0}
+a.row:hover{background:#ffffff0d}
+.gleis{background:var(--board-ink);color:var(--board);font-weight:700;text-align:center;border-radius:3px;padding:2px 0;font-variant-numeric:tabular-nums}
+.dest b{display:block;font-size:1.05rem;line-height:1.3}
+.dest span{color:var(--board-dim);font-size:.86rem}
+.state{font-size:.85rem;color:var(--board-dim);white-space:nowrap}
+.state .star{color:#ffd34d;letter-spacing:1px}
+.row.soon{opacity:.5}
+.row.soon .gleis{background:transparent;color:var(--board-dim);border:1px solid var(--board-dim)}
+
+/* station sign */
+.back{font-size:.9rem;text-decoration:none;color:var(--muted)}
+.sign{background:var(--sign);color:var(--sign-ink);border-radius:4px;padding:14px 18px;border:3px solid var(--sign);outline:2px solid #ffffff55;outline-offset:-7px}
+.sign b{display:block;font-size:clamp(1.5rem,6vw,2.1rem);line-height:1.1;letter-spacing:-.01em}
+.sign span{opacity:.85;font-size:.9rem}
+
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.steps a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;border-radius:6px;text-decoration:none;color:var(--muted);font-size:.82rem;border:1px solid transparent}
+.steps a i{font-style:normal;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--line);font-size:.78rem;font-weight:700}
+.steps a.seen i{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.steps a[aria-current="step"]{color:var(--ink);border-color:var(--line);background:var(--surface);font-weight:700}
+.steps a[aria-current="step"] i{border-color:var(--red)}
+.steps a.locked{opacity:.55}
+
+.story{font-size:1.02rem}
+.goal{border-left:4px solid var(--red);padding:4px 0 4px 12px;margin-top:14px}
+.note{background:var(--soft);border-radius:6px;padding:10px 12px;font-size:.88rem}
+
+.next{align-self:flex-end;background:var(--red);color:var(--red-ink);border:0;border-radius:6px;padding:10px 18px;font-weight:700;text-decoration:none}
+.btn2{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:9px 16px;text-decoration:none;color:var(--ink)}
+.btnrow{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+
+/* vocab cards */
+.vlist{display:flex;flex-direction:column;gap:12px}
+.v .line{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.w{font-size:1.3rem;font-weight:700;letter-spacing:-.01em}
+.v .zh{margin-top:2px}
+.hz{margin-top:8px;font-size:1.05rem}
+.hz em{font-style:normal;font-size:.78rem;color:var(--muted);margin-right:6px;border:1px solid var(--line);border-radius:3px;padding:0 5px}
+.hz b{color:var(--red)}
+.tip,.mem{margin-top:6px;font-size:.92rem}
+.mem{background:var(--soft);border-radius:6px;padding:8px 10px}
+.meta{margin-top:8px;font-size:.84rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 14px}
+
+.spk{display:inline-flex;gap:4px;align-items:center}
+.spk button{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:.8rem;display:inline-flex;align-items:center;gap:4px;color:var(--muted)}
+.spk button:hover{border-color:var(--ink);color:var(--ink)}
+.spk svg{width:15px;height:15px}
+
+.pt h3{margin:0 0 6px;font-size:1rem}
+.ex{margin-top:10px;display:flex;flex-direction:column;gap:8px}
+.exl .line{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.exl .w{font-size:1.05rem}
+.exl .zh{font-size:.9rem;color:var(--muted)}
+
+.dlg{display:flex;flex-direction:column;gap:10px}
+.bub{max-width:88%;background:var(--surface);border:1px solid var(--line);border-radius:12px 12px 12px 3px;padding:10px 12px}
+.bub.me{align-self:flex-end;border-radius:12px 12px 3px 12px;background:var(--soft);border-color:transparent}
+.bub .who{font-size:.78rem;color:var(--muted);font-weight:700}
+.bub .line{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.bub .w{font-size:1.05rem}
+.bub .zh{font-size:.9rem;color:var(--muted)}
+.bub.playing{outline:2px solid var(--red)}
+
+/* practice */
+.prog{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--red);transition:width .3s}
+.q{font-size:1.1rem;font-weight:700}
+.opts{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.opt{display:flex;align-items:center;justify-content:space-between;gap:8px;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:8px;padding:11px 14px;font-size:1rem}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.fb{margin-top:14px;border-radius:8px;padding:12px 14px;font-size:.94rem}
+.fb.good{background:var(--ok-bg)}
+.fb.badf{background:var(--bad-bg)}
+.fb b{display:block;margin-bottom:2px}
+.tokens{display:flex;flex-wrap:wrap;gap:8px;min-height:46px;padding:8px;border:1.5px dashed var(--line);border-radius:8px;margin-top:12px}
+.tokens.pool{border-style:solid;border-color:transparent;padding:0}
+.tok{background:var(--surface);border:1.5px solid var(--line);border-radius:6px;padding:6px 11px;font-size:1rem}
+.tok.used{visibility:hidden}
+.big-spk{display:flex;justify-content:center;margin:14px 0 4px}
+.big-spk .spk button{font-size:1rem;padding:10px 20px;color:var(--ink)}
+.big-spk .spk svg{width:22px;height:22px}
+.result{text-align:center}
+.result .stars{font-size:2.6rem;color:var(--gold);letter-spacing:4px}
+.result .stars span{color:var(--line)}
+.locked-box{text-align:center}
+
+.glist{display:flex;flex-direction:column;gap:12px}
+.wordrow{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.wordrow:last-child{border-bottom:0}
+.wordrow .w{font-size:1.05rem}
+.wordrow .hz{margin:0;font-size:.92rem}
+.wordrow .zh{grid-column:1/-1;font-size:.9rem;color:var(--muted)}
+#warn{font-size:.85rem}
+</style>
+
+<div class="wrap">
+  <header>
+    <a class="brand" href="#/">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" fill="#d52b1e"/><path fill="#fff" d="M13 6h6v7h7v6h-7v7h-6v-7H6v-6h7z"/></svg>
+      <h1>苏黎世一个月<small>Ein Monat z Züri · 瑞士德语速成</small></h1>
+    </a>
+    <nav class="tabs" aria-label="栏目">
+      <a href="#/" data-tab="home">路线</a>
+      <a href="#/guide" data-tab="guide">读音</a>
+      <a href="#/words" data-tab="words">生词本</a>
+    </nav>
+  </header>
+  <p id="warn" class="note" hidden>录音没有加载出来，正在用你设备自带的德语语音代替。</p>
+  <main id="app"></main>
+</div>
+
+<script>const DATA={"intro": {"title": "苏黎世一个月", "sub": "Ein Monat z Züri", "story": "你要在苏黎世住一个月。房东是一位退休的苏黎世阿姨 Vreni，她说一口地道的苏黎世话。每一课是这座城市里的一站：火车站、面包店、市集、电车、湖边咖啡馆……跟着她，一站一站学会当地人每天挂在嘴边的话。", "facts": ["瑞士德语基本只用来“说”。瑞士人聊天说方言，但写东西、看报纸、正式场合都用标准德语（德国那种德语）。所以这里只学“听懂 + 说几句”。", "方言没有统一拼法，同一个词在不同地方写法、读法都可能不一样。这里按苏黎世话来。", "录音是电脑配音：它念的是“带瑞士口音的标准德语”，方言词只能念个大概。发音以每个词下面的汉字注音和提示为准。"]}, "lessons": [{"id": 1, "place": "Hauptbahnhof", "placeZh": "苏黎世火车总站", "title": "Grüezi！", "titleZh": "打招呼和道别", "story": "你拖着行李箱走出列车，苏黎世火车总站的大厅高高的，屋顶下吊着一尊五彩的胖天使雕像。人群里，一位满头银发的阿姨举着写着你名字的牌子，正朝你笑——她就是你的房东 Vreni。", "vocab": [{"w": "Grüezi", "zh": "你好（对陌生人、礼貌场合）", "hz": "*格吕*-诶-慈", "de": "Guten Tag", "en": "Hello (polite)", "tip": "ü 就是拼音里的 ü：嘴撅圆念“衣”。ue 要拆成“ü-诶”两小段，最后的 zi 念“茨衣”。", "mem": "英文 greet + “zi”：greet-zi，跟人打招呼就说 Grüezi。这是你在瑞士最常用的一个词。"}, {"w": "Hoi", "zh": "嗨（熟人、朋友之间）", "hz": "*霍伊*（快读成一个音）", "de": "Hallo", "en": "Hi", "mem": "像水手喊的 “Ahoy!”，把 A 去掉就是 Hoi。"}, {"w": "Wie gaht's?", "zh": "最近好吗？", "hz": "维 *嘎*-茨", "de": "Wie geht's?", "en": "How's it going?", "mem": "gaht 就是英文 go：“How goes it?” → Wie gaht's?"}, {"w": "Guet, merci.", "zh": "很好，谢谢。", "hz": "*古*-诶特，*没*-儿西", "de": "Gut, danke.", "en": "Good, thanks.", "tip": "Guet 要念成“古-诶特”两段，不是英文 good。merci 重音在前面。", "mem": "Guet ≈ good。merci 是法语的“谢谢”——瑞士有四种官方语言，德语区的人也天天说 merci。"}, {"w": "Und Ihne?", "say": "Und Ihne? Und dir?", "zh": "您呢？（对熟人说 Und dir? 你呢？）", "hz": "温德 *伊*-讷？／温德 *迪*-尔？", "de": "Und Ihnen? / Und dir?", "en": "And you?", "tip": "瑞士话常把词尾的 n 吞掉：标准德语 Ihnen 在这里变成 Ihne。", "mem": "dir 像英文 dear（亲爱的）——只有熟人才用 dir，陌生人用 Ihne。"}, {"w": "Ich heisse …", "say": "Ich heisse Lin.", "zh": "我叫……", "hz": "伊赫 *海*-瑟 ……", "de": "Ich heisse …", "en": "My name is …", "tip": "ch 是从喉咙后面擦出来的“喝”，比拼音 h 更粗、更响。", "mem": "heisse 念起来像 high-se：大声（high）说出自己的名字。"}, {"w": "Freut mi!", "zh": "很高兴认识你！", "hz": "*弗罗伊*特 米", "de": "Freut mich!", "en": "Nice to meet you!", "mem": "Freude 是“欢乐”（《欢乐颂》就是 Ode an die Freude），mi = me：“joy for me”。"}, {"w": "Uf Widerluege!", "zh": "再见！（礼貌场合）", "hz": "乌夫 *维*-德-卢-诶-格", "de": "Auf Wiedersehen!", "en": "Goodbye!", "mem": "拆开看：uf = on，wider = again，luege = look（luege 和英文 look 是亲戚）→ “look again”，下次再见。"}, {"w": "Tschüss!", "say": "Tschüss! Ciao!", "zh": "拜拜！（熟人；也常说 Ciao!）", "hz": "*丘*斯！／*乔*！", "de": "Tschüss!", "en": "Bye!", "mem": "Ciao 就是意大利语那个 ciao——瑞士南部讲意大利语，苏黎世人也爱用。"}, {"w": "En schöne Tag no!", "zh": "祝你今天愉快！", "hz": "恩 *舍*-讷 *塔*格 诺", "de": "Einen schönen Tag noch!", "en": "Have a nice day!", "tip": "ö：嘴形摆成“欧”，舌头却念“诶”，有点像英文 bird 里的 ir。", "mem": "schön 和英文 shine 长得像：a shining day，美好的一天。"}], "points": [{"t": "礼貌说法 和 熟人说法", "b": "对陌生人、店员、长辈：Grüezi 打招呼，Uf Widerluege 道别，问“您呢”用 Und Ihne?。对朋友、同龄人：Hoi 打招呼，Tschüss / Ciao 道别，用 Und dir?。拿不准就用礼貌的那套，不会出错。", "ex": [{"w": "Grüezi! Wie gaht's Ihne?", "zh": "您好！您好吗？（礼貌）"}, {"w": "Hoi! Wie gaht's dir?", "zh": "嗨！你好吗？（熟人）"}]}, {"t": "进门有好几个人？加一个 mitenand", "b": "mitenand 意思是“大家”。走进一家小店、电梯、等候室，里面有好几个人，就说 Grüezi mitenand，瑞士人很讲究这个。", "ex": [{"w": "Grüezi mitenand!", "zh": "大家好！"}]}, {"t": "名字前面加个 d", "b": "苏黎世人说女性的名字时，前面常带一个小小的 d（相当于“这位”），说男性名字时带 de。所以 Vreni 会介绍自己是 d Vreni。听到别慌，它就是个冠词（放在名词前面的小词，类似英文的 the）。", "ex": [{"w": "Ich bin d Vreni.", "zh": "我是 Vreni。"}]}], "dialog": [{"s": "Vreni", "w": "Grüezi! Ich bin d Vreni.", "zh": "您好！我是 Vreni。"}, {"s": "你", "w": "Grüezi! Ich heisse Lin. Freut mi!", "zh": "您好！我叫林。很高兴认识您！", "b": 1}, {"s": "Vreni", "w": "Freut mi au! Wie gaht's Ihne?", "zh": "我也很高兴！您好吗？"}, {"s": "你", "w": "Guet, merci. Und Ihne?", "zh": "很好，谢谢。您呢？", "b": 1}, {"s": "Vreni", "w": "Super, merci! Chömed Sie, mir gönd hei.", "zh": "很好，谢谢！来吧，我们回家。"}], "culture": "苏黎世火车总站大厅里吊着的那尊五彩胖天使叫“守护天使”，是法国艺术家 Niki de Saint Phalle 的作品，几乎每个初到苏黎世的人都会抬头看它。瑞士人第一次见面握手；熟人之间常常左右左亲脸颊三下。", "quiz": [{"q": "你走进一家小面包店，里面已经有三位客人。你开口说：", "opts": [{"w": "Grüezi mitenand!", "ok": 1}, {"w": "Tschüss!"}, {"w": "Freut mi!"}], "why": "进门对一屋子人打招呼用 Grüezi mitenand。Tschüss 是“拜拜”，Freut mi 是“很高兴认识你”。"}, {"q": "Vreni 问你：“Wie gaht's Ihne?”，你回答：", "opts": [{"w": "Guet, merci. Und Ihne?", "ok": 1}, {"w": "Uf Widerluege!"}, {"w": "Ich heisse Lin."}], "why": "她问你好不好，回答“很好，谢谢，您呢？”。"}, {"q": "和年轻的室友道别，最自然的说法是：", "opts": [{"w": "Tschüss!", "ok": 1}, {"w": "Grüezi!"}, {"w": "Wie gaht's?"}], "why": "熟人之间道别用 Tschüss 或 Ciao。Grüezi 是见面时说的。"}]}, {"id": 2, "place": "Beck", "placeZh": "街角面包店", "title": "Es Gipfeli, bitte", "titleZh": "买早餐、说谢谢", "story": "第二天一早，Vreni 递给你一个布袋：“去街角的 Beck（面包店）买两个 Gipfeli 回来，我煮咖啡。”玻璃柜里摆满了金黄的牛角面包、辫子面包和中间带一道缝的小圆面包。", "vocab": [{"w": "Was dörfs sii?", "zh": "您要点什么？（店员常说）", "hz": "瓦斯 *德*尔夫斯 西", "de": "Was darf es sein?", "en": "What can I get you?", "tip": "sii 念长长的“西——”。", "mem": "逐字是 “What may it be?”。店员一说 “…dörfs sii?”，就是轮到你点单了。"}, {"w": "Ich hett gärn …", "say": "Ich hett gärn es Gipfeli.", "zh": "我想要……", "hz": "伊赫 *嘿*特 *给*恩 ……", "de": "Ich hätte gern …", "en": "I'd like …", "mem": "中文谐音“嘿特，给嗯……”——“嘿，给我……”。英文 gärn 像 yearn（渴望）。"}, {"w": "es Gipfeli", "zh": "一个牛角面包（可颂）", "hz": "埃斯 *吉*普-菲-利", "de": "ein Croissant", "en": "a croissant", "mem": "Gipfel 是“山峰”，-li 是“小”→ “小山尖”：可颂两头翘起，像一座小山。"}, {"w": "es Weggli", "zh": "一个小白面包", "hz": "埃斯 *韦*格-利", "de": "ein Brötchen", "en": "a bread roll", "mem": "Weg = way，路。Weggli 中间有一道“小路”似的缝，掰开正好两半。"}, {"w": "bitte", "zh": "请", "hz": "*比*-特", "de": "bitte", "en": "please", "mem": "英文 a bit：请给我 a bit。"}, {"w": "Merci vilmal!", "zh": "非常感谢！", "hz": "*没*-儿西 *菲*尔-马尔", "de": "Vielen Dank!", "en": "Thanks a lot!", "mem": "vil = many，mal = times：“merci many times”。"}, {"w": "Gärn gscheh!", "zh": "不客气！", "hz": "*给*恩 格-*舍*", "de": "Gern geschehen!", "en": "You're welcome!", "mem": "逐字是 “gladly done”（乐意效劳）。gscheh 谐音“格谢”：你格外感谢，我说不客气。"}, {"w": "Süsch no öppis?", "zh": "还要别的吗？", "hz": "*居*施 诺 *厄*皮斯", "de": "Sonst noch etwas?", "en": "Anything else?", "mem": "öppis = something。念起来像 “a piece”：再来一 piece 吗？"}, {"w": "Nei, das isch alles.", "zh": "不用了，就这些。", "hz": "奈，达斯 伊施 *阿*勒斯", "de": "Nein, das ist alles.", "en": "No, that's all.", "mem": "几乎就是英文：Nei = nay，isch = is，alles = all → “Nay, that is all.”"}, {"w": "Exgüsi!", "zh": "不好意思／打扰一下", "hz": "埃克斯-*居*-西", "de": "Entschuldigung!", "en": "Excuse me!", "mem": "来自法语 excusez：念成 “excuse-y” 就对了。问路、借过、碰到人都能用。"}], "points": [{"t": "万能点单句：Ich hett gärn + 东西 + bitte", "b": "面包店、咖啡馆、车站售票窗口都能用。把东西换掉就行。", "ex": [{"w": "Ich hett gärn es Gipfeli, bitte.", "zh": "我想要一个牛角面包，谢谢。"}, {"w": "Ich hett gärn zwei Weggli, bitte.", "zh": "我想要两个小面包，谢谢。"}]}, {"t": "词尾的 -li 表示“小”", "b": "瑞士人特别爱在词尾加 -li，表示“小小的、可爱的”。Gipfeli、Weggli、Chuchichäschtli（小厨柜）都是这样。听到 -li，就知道是个小东西。", "ex": [{"w": "es Chuchichäschtli", "zh": "一个小厨柜（瑞士人最爱拿来考外国人的词）"}]}, {"t": "“一个”有三种说法：en / e / es", "b": "德语的名词分三种“性别”（阳性、阴性、中性，只是语法上的分类，跟东西本身无关），“一个”就分别说 en、e、es。不用背规则，跟着词整体记：es Gipfeli、en Kafi、e Schale。", "ex": []}], "dialog": [{"s": "店员", "w": "Grüezi! Was dörfs sii?", "zh": "您好！您要点什么？"}, {"s": "你", "w": "Grüezi! Ich hett gärn zwei Gipfeli, bitte.", "zh": "您好！我想要两个牛角面包，谢谢。", "b": 1}, {"s": "店员", "w": "Gärn. Süsch no öppis?", "zh": "好的。还要别的吗？"}, {"s": "你", "w": "Nei, das isch alles. Merci.", "zh": "不用了，就这些。谢谢。", "b": 1}, {"s": "店员", "w": "Das macht vier Franke.", "zh": "一共四法郎。"}, {"s": "你", "w": "Merci vilmal!", "zh": "非常感谢！"}, {"s": "店员", "w": "Gärn gscheh. En schöne Tag no!", "zh": "不客气。祝你今天愉快！"}], "culture": "瑞士的 Gipfeli 比法国可颂更扎实、略带一点咸甜。周日瑞士大部分商店都关门，想买面包要找火车站里的店。早餐常见的还有辫子面包 Zopf，周末才吃。", "quiz": [{"q": "店员问：“Süsch no öppis?”，你已经买够了，回答：", "opts": [{"w": "Nei, das isch alles.", "ok": 1}, {"w": "Gärn gscheh."}, {"w": "Was dörfs sii?"}], "why": "她问“还要别的吗”，你说“不用了，就这些”。"}, {"q": "店员对你说 “Merci vilmal!”，你回答：", "opts": [{"w": "Gärn gscheh!", "ok": 1}, {"w": "Exgüsi!"}, {"w": "Hoi!"}], "why": "别人谢你，回“不客气”：Gärn gscheh。"}, {"q": "排队时不小心碰到别人，你说：", "opts": [{"w": "Exgüsi!", "ok": 1}, {"w": "Bitte!"}, {"w": "Freut mi!"}], "why": "Exgüsi 就是“不好意思”。"}]}, {"id": 3, "place": "Bürkliplatz-Märt", "placeZh": "湖边的 Bürkliplatz 市集", "title": "Was choschtet das?", "titleZh": "数字和问价钱", "story": "周二上午，Vreni 带你去湖边的 Bürkliplatz 市集。摊位上堆着红艳艳的草莓、一大块一大块的奶酪和刚剪下的鲜花。Vreni 小声说：“在这里买东西，要会数数，还要会问价钱。”", "vocab": [{"w": "eis", "zh": "一", "hz": "*埃*斯", "de": "eins", "en": "one", "mem": "扑克牌的 ace（A）就是“一”。"}, {"w": "zwei", "zh": "二", "hz": "*茨外*", "de": "zwei", "en": "two", "mem": "英文 twice（两次）开头的 tw 换成 zw。"}, {"w": "drü", "zh": "三", "hz": "*德吕*", "de": "drei", "en": "three", "mem": "three 的 th 变成 d，元音变成 ü：drü。"}, {"w": "vier", "zh": "四", "hz": "*菲*-尔", "de": "vier", "en": "four", "tip": "v 在这里念 f。", "mem": "v 念 f：vier ≈ four。"}, {"w": "föif", "zh": "五", "hz": "*弗厄伊*夫", "de": "fünf", "en": "five", "tip": "öi 是先念 ö 再滑到“衣”。", "mem": "f…f 两头和 five 一样。"}, {"w": "sächs", "zh": "六", "hz": "*赛*克斯", "de": "sechs", "en": "six", "mem": "就是 six，嘴张大一点。"}, {"w": "sibe", "zh": "七", "hz": "*西*-贝", "de": "sieben", "en": "seven", "mem": "seven 去掉词尾的 n（瑞士话爱吞词尾 n）。"}, {"w": "acht", "zh": "八", "hz": "*阿*赫特", "de": "acht", "en": "eight", "tip": "ch 是喉咙里的“喝”。", "mem": "eight 中间塞一个“喝”：a-喝-t。"}, {"w": "nüün", "zh": "九", "hz": "*纽*-恩", "de": "neun", "en": "nine", "mem": "nine 的元音换成长长的 ü。"}, {"w": "zäh", "zh": "十", "hz": "*才*——（拖长）", "de": "zehn", "en": "ten", "tip": "ä 是嘴张得很大的“诶”。", "mem": "ten 的 t 变成 z，n 吞掉：zäh。"}, {"w": "Was choschtet das?", "zh": "这个多少钱？", "hz": "瓦斯 *霍*施特特 达斯", "de": "Was kostet das?", "en": "What does it cost?", "tip": "瑞士话把 k 念成喉咙里的 ch（喝），把 st 念成 scht（施特）。", "mem": "choschtet ≈ cost。"}, {"w": "Franke", "zh": "法郎（瑞士的钱）", "hz": "*弗朗*-克", "de": "Franken", "en": "Swiss francs", "mem": "Franke = franc。口语里也说 Stutz，就像英文说 bucks（块钱）。"}, {"w": "Das isch tüür!", "zh": "太贵了！", "hz": "达斯 伊施 *提*-尔", "de": "Das ist teuer!", "en": "That's expensive!", "mem": "tüür 像英文 tear（眼泪）：贵得想哭。"}, {"w": "Chan ich mit Charte zahle?", "zh": "可以刷卡吗？", "hz": "汉 伊赫 米特 *哈*尔特 *察*-勒", "de": "Kann ich mit Karte zahlen?", "en": "Can I pay by card?", "mem": "Chan = can，Charte = card，zahle 像 tally（结账）。"}], "points": [{"t": "k 常常变成 ch", "b": "这是苏黎世话最明显的特点之一：标准德语的 k，瑞士人念成喉咙里擦出来的 ch。Kann → Chan，Karte → Charte，kostet → choschtet。", "ex": [{"w": "Chan ich mit Charte zahle?", "zh": "可以刷卡吗？"}]}, {"t": "价格怎么念", "b": "先说法郎，再说零头的分（Rappe）。几个常用的整十：zwänzg（二十）、föifzg（五十）。所以 3.50 法郎说成 drü Franke föifzg。", "ex": [{"w": "drü Franke föifzg", "zh": "3.50 法郎"}, {"w": "zwänzg Franke", "zh": "20 法郎"}]}, {"t": "买东西的一句话", "b": "指着东西说 Ich nimm das（我要这个），最省事。", "ex": [{"w": "Ich nimm das, bitte.", "zh": "我要这个，谢谢。"}]}], "dialog": [{"s": "你", "w": "Grüezi! Was choschtet das?", "zh": "您好！这个多少钱？", "b": 1}, {"s": "摊主", "w": "D Erdbeeri? Sächs Franke.", "zh": "草莓吗？六法郎。"}, {"s": "你", "w": "Oh, das isch tüür!", "zh": "哦，好贵啊！", "b": 1}, {"s": "摊主", "w": "Aber sie sind sehr fein!", "zh": "但是很好吃哦！"}, {"s": "你", "w": "Guet, ich nimm das. Chan ich mit Charte zahle?", "zh": "好吧，我要了。可以刷卡吗？", "b": 1}, {"s": "摊主", "w": "Ja, kei Problem.", "zh": "可以，没问题。"}], "culture": "Bürkliplatz 的市集每周二和周五上午开，就在苏黎世湖边。瑞士物价很高，一小盒草莓卖六七法郎很正常。瑞士人付小钱爱用手机 App TWINT 扫码，现金和银行卡也都能用。", "quiz": [{"q": "“föif” 是几？", "opts": [{"w": "föif", "zh": "五", "ok": 1}, {"w": "föif", "zh": "四"}, {"w": "föif", "zh": "七"}], "why": "föif = 五，f…f 和英文 five 一样。", "zhOpts": 1}, {"q": "你想问能不能刷卡，说：", "opts": [{"w": "Chan ich mit Charte zahle?", "ok": 1}, {"w": "Was choschtet das?"}, {"w": "Das isch tüür!"}], "why": "Charte = card，zahle = pay。"}, {"q": "摊主说 “drü Franke föifzg”，你该付：", "opts": [{"w": "drü Franke föifzg", "zh": "3.50 法郎", "ok": 1}, {"w": "drü Franke föifzg", "zh": "5.30 法郎"}, {"w": "drü Franke föifzg", "zh": "35 法郎"}], "why": "先说法郎（drü = 3），再说零头（föifzg = 50 分）。", "zhOpts": 1}]}, {"id": 4, "place": "Tram 4", "placeZh": "蓝白色的电车上", "title": "Ich verstah nöd", "titleZh": "听不懂怎么办、问路", "story": "下午你一个人坐蓝白色的电车去 Bellevue。车上一位老先生热情地跟你说了一长串话，你一个字也没听懂。别慌——这一课就学“救命句”：听不懂、请说慢一点、请问……在哪里。", "vocab": [{"w": "Ich verstah nöd.", "zh": "我听不懂。", "hz": "伊赫 费尔-*施塔* *讷*德", "de": "Ich verstehe nicht.", "en": "I don't understand.", "mem": "verstah ≈ understand（都有 stand/stah“站”）；nöd = not。nöd 看着像 nod（点头），意思却是“不”——摇头才对。"}, {"w": "Langsam, bitte.", "zh": "请慢一点。", "hz": "*朗*-萨姆，*比*-特", "de": "Langsam, bitte.", "en": "Slowly, please.", "mem": "lang = long：拉长了说就是慢。"}, {"w": "Chönd Sie das widerhole?", "zh": "您能再说一遍吗？", "hz": "*肯*德 西 达斯 *维*德-霍勒", "de": "Können Sie das wiederholen?", "en": "Could you repeat that?", "mem": "Chönd ≈ can（又是 k 变 ch）；wider = again，hole = 拿 → “再拿一次”= 重复。"}, {"w": "Reded Sie Änglisch?", "zh": "您会说英语吗？", "hz": "*雷*-德德 西 *恩*-利施", "de": "Sprechen Sie Englisch?", "en": "Do you speak English?", "mem": "rede 像 read（读出来、说出来）。Änglisch 就是 English。"}, {"w": "Ich bin nöd vo da.", "zh": "我不是本地人。", "hz": "伊赫 宾 *讷*德 佛 *达*", "de": "Ich bin nicht von hier.", "en": "I'm not from here.", "mem": "逐字就是 “I am not from there”。"}, {"w": "Wo isch …?", "say": "Wo isch de Bahnhof?", "zh": "……在哪里？", "hz": "*沃* 伊施 ……", "de": "Wo ist …?", "en": "Where is …?", "mem": "wo = where，isch = is。"}, {"w": "d Haltestell", "zh": "车站（电车、公交站）", "hz": "德 *哈*尔特-施特尔", "de": "die Haltestelle", "en": "the stop", "mem": "halt = 英文 halt（停）：停车的地方。"}, {"w": "grad us", "zh": "直走", "hz": "格拉德 *乌*斯", "de": "geradeaus", "en": "straight ahead", "mem": "grad ≈ straight，us = out：一直往外走。"}, {"w": "links / rächts", "say": "links, rächts", "zh": "左边 ／ 右边", "hz": "*林*克斯 ／ *雷*赫茨", "de": "links / rechts", "en": "left / right", "mem": "links 和 left 都是 l 开头；rächts 和 right 都是 r 开头。"}, {"w": "s Tram", "zh": "电车", "hz": "斯 *特拉*姆", "de": "die Straßenbahn", "en": "the tram", "mem": "就是英文 tram。瑞士人不说德国的 Straßenbahn。"}], "points": [{"t": "nöd = 不", "b": "标准德语的 nicht（不），苏黎世话说 nöd。放在动词后面：Ich verstah nöd（我不懂），Ich bin nöd vo da（我不是这里的）。", "ex": [{"w": "Ich weiss es nöd.", "zh": "我不知道。"}]}, {"t": "救命三连", "b": "听不懂时，连着说这三句，对方一定会放慢、换英语或者比划给你看。瑞士人英语普遍很好，但你先说一句瑞士话，他们会特别开心。", "ex": [{"w": "Exgüsi, ich verstah nöd.", "zh": "不好意思，我听不懂。"}, {"w": "Langsam, bitte.", "zh": "请慢一点。"}, {"w": "Reded Sie Änglisch?", "zh": "您会说英语吗？"}]}, {"t": "问路：Wo isch + 地方？", "b": "前面加个 Exgüsi 更礼貌。", "ex": [{"w": "Exgüsi, wo isch d Haltestell?", "zh": "打扰一下，车站在哪里？"}]}], "dialog": [{"s": "你", "w": "Exgüsi, gaht das Tram zum Bellevue?", "zh": "打扰一下，这趟电车去 Bellevue 吗？", "b": 1}, {"s": "老先生", "w": "Jaja, das isch de Vierer. Bim Bellevue müend Sie usstiige.", "zh": "对对，这是 4 路。到 Bellevue 您要下车。"}, {"s": "你", "w": "Exgüsi, ich verstah nöd. Langsam, bitte.", "zh": "不好意思，我听不懂。请慢一点。", "b": 1}, {"s": "老先生", "w": "Bellevue: usstiige. Ganz eifach!", "zh": "Bellevue：下车。很简单！"}, {"s": "你", "w": "Merci vilmal!", "zh": "非常感谢！"}], "culture": "苏黎世的电车是蓝白色的，准点得像钟表。车上司机不卖票，要在上车前用站台的售票机或手机 App 买好。车上偶尔有查票员，没票会被罚款。", "quiz": [{"q": "对方说话太快，你想请他慢一点：", "opts": [{"w": "Langsam, bitte.", "ok": 1}, {"w": "Grad us."}, {"w": "Süsch no öppis?"}], "why": "langsam = 慢。"}, {"q": "“Ich verstah nöd” 的意思是：", "opts": [{"w": "Ich verstah nöd.", "zh": "我听不懂。", "ok": 1}, {"w": "Ich verstah nöd.", "zh": "我不是本地人。"}, {"w": "Ich verstah nöd.", "zh": "我要下车。"}], "why": "verstah = 懂，nöd = 不。", "zhOpts": 1}, {"q": "你想问车站在哪里：", "opts": [{"w": "Wo isch d Haltestell?", "ok": 1}, {"w": "Was choschtet das?"}, {"w": "Ich bin nöd vo da."}], "why": "Wo isch … = ……在哪里。"}]}, {"id": 5, "place": "Kafi am See", "placeZh": "湖边咖啡馆", "title": "Zahle, bitte!", "titleZh": "点饮料、结账", "story": "第一周的最后一天，Vreni 约你在湖边的咖啡馆坐坐。阳光照在苏黎世湖上，天鹅慢悠悠地游过。Vreni 说：“今天你来点单，我只负责喝。”", "vocab": [{"w": "Isch da no frei?", "zh": "这里有人坐吗？", "hz": "伊施 达 诺 *弗莱*", "de": "Ist hier noch frei?", "en": "Is this seat free?", "mem": "几乎是英文：Is there … free?"}, {"w": "Was nämed Sie?", "zh": "您要点什么？（服务员常说）", "hz": "瓦斯 *奈*-梅德 西", "de": "Was nehmen Sie?", "en": "What will you have?", "mem": "näme ≈ take（拿）。“What do you take?”"}, {"w": "Ich nimm …", "say": "Ich nimm en Kafi.", "zh": "我要……", "hz": "伊赫 *宁*姆 ……", "de": "Ich nehme …", "en": "I'll have …", "mem": "nimm 谐音“拎”：我拎这个。"}, {"w": "en Kafi", "zh": "一杯咖啡", "hz": "恩 *卡*-菲", "de": "einen Kaffee", "en": "a coffee", "mem": "Kafi = coffee，-i 结尾很瑞士。"}, {"w": "e Schale", "zh": "一杯牛奶咖啡", "hz": "诶 *沙*-勒", "de": "ein Milchkaffee", "en": "a milky coffee", "mem": "Schale 是“碗”（英文 shell，贝壳）——牛奶咖啡以前用大碗装。"}, {"w": "es Mineral", "zh": "一瓶矿泉水", "hz": "埃斯 米-讷-*拉*尔", "de": "ein Mineralwasser", "en": "a mineral water", "mem": "就是 mineral（water）。服务员会问 mit oder ohni?——带气还是不带气。"}, {"w": "mit oder ohni?", "zh": "带气的还是不带气的？", "hz": "米特 *欧*德 *欧*-尼", "de": "mit oder ohne?", "en": "with or without?", "mem": "mit = with，ohni = without。"}, {"w": "Proscht!", "zh": "干杯！", "hz": "*普罗*施特", "de": "Prost!", "en": "Cheers!", "mem": "Prost 加一个瑞士式的 sch。"}, {"w": "En Guete!", "zh": "吃好喝好！（开吃前说）", "hz": "恩 *古*-诶-特", "de": "Guten Appetit!", "en": "Enjoy your meal!", "mem": "Guete ≈ good：祝你吃个“好”。"}, {"w": "Zahle, bitte!", "zh": "买单！", "hz": "*察*-勒，*比*-特", "de": "Zahlen, bitte!", "en": "The bill, please!", "mem": "zahle ≈ tally（结账）。"}, {"w": "Zäme oder separat?", "zh": "一起付还是分开付？", "hz": "*才*-梅 *欧*德 塞-帕-*拉*特", "de": "Zusammen oder getrennt?", "en": "Together or separately?", "mem": "zäme = together（和 Grüezi mitenand 是一家人，都是“一起”）；separat = separate。"}, {"w": "Stimmt so.", "zh": "不用找了。", "hz": "*施廷*姆特 索", "de": "Stimmt so.", "en": "Keep the change.", "mem": "“That's right like that”——就这样，正好。"}], "points": [{"t": "点饮料：Ich nimm + 东西", "b": "和第二课的 Ich hett gärn 一样好用，咖啡馆里更随意一点。", "ex": [{"w": "Ich nimm e Schale, bitte.", "zh": "我要一杯牛奶咖啡。"}, {"w": "Ich nimm es Mineral, ohni.", "zh": "我要一瓶不带气的矿泉水。"}]}, {"t": "结账要叫服务员", "b": "瑞士的咖啡馆一般不会主动给你账单，要举手说 Zahle, bitte!。服务员常问 Zäme oder separat?，朋友之间各付各的很普遍。", "ex": [{"w": "Zahle, bitte!", "zh": "买单！"}]}, {"t": "小费：凑个整就行", "b": "瑞士的价格里已经含了服务费。给小费不是必须的，通常凑个整数，说 Stimmt so。比如账单 9.80，给 10 法郎。", "ex": [{"w": "Zäh Franke. Stimmt so!", "zh": "十法郎，不用找了！"}]}], "dialog": [{"s": "服务员", "w": "Grüezi mitenand! Was nämed Sie?", "zh": "两位好！要点什么？"}, {"s": "你", "w": "Ich nimm e Schale, bitte. Und es Mineral.", "zh": "我要一杯牛奶咖啡，还有一瓶矿泉水。", "b": 1}, {"s": "服务员", "w": "Mit oder ohni?", "zh": "带气还是不带气？"}, {"s": "你", "w": "Ohni, bitte.", "zh": "不带气的，谢谢。"}, {"s": "Vreni", "w": "Proscht!", "zh": "干杯！"}, {"s": "你", "w": "Zahle, bitte!", "zh": "买单！", "b": 1}, {"s": "服务员", "w": "Zäme oder separat?", "zh": "一起还是分开？"}, {"s": "你", "w": "Zäme. Zäh Franke. Stimmt so!", "zh": "一起。十法郎，不用找了！", "b": 1}, {"s": "服务员", "w": "Merci vilmal!", "zh": "非常感谢！"}], "culture": "瑞士人碰杯说 Proscht 的时候，一定要看着对方的眼睛，挨个碰完才喝。开吃前大家互相说 En Guete。苏黎世湖边夏天可以直接下湖游泳，城里有好几个老式木头浴场，叫 Badi。", "quiz": [{"q": "服务员问 “Mit oder ohni?”，她在问：", "opts": [{"w": "Mit oder ohni?", "zh": "矿泉水带不带气", "ok": 1}, {"w": "Mit oder ohni?", "zh": "要不要加糖"}, {"w": "Mit oder ohni?", "zh": "要不要打包"}], "why": "点矿泉水时，服务员会问要带气（mit）还是不带气（ohni）。", "zhOpts": 1}, {"q": "吃完了想结账，你举手说：", "opts": [{"w": "Zahle, bitte!", "ok": 1}, {"w": "En Guete!"}, {"w": "Proscht!"}], "why": "Zahle, bitte = 买单。"}, {"q": "账单 9.80 法郎，你给了 10 法郎，想说不用找了：", "opts": [{"w": "Stimmt so.", "ok": 1}, {"w": "Das isch tüür!"}, {"w": "Zäme oder separat?"}], "why": "Stimmt so = 不用找了。"}]}], "soon": [{"place": "Hotel", "placeZh": "酒店前台", "titleZh": "入住、问时间"}, {"place": "Coop", "placeZh": "超市", "titleZh": "超市买东西、找东西"}, {"place": "Zürichsee", "placeZh": "湖上游船", "titleZh": "天气、闲聊"}, {"place": "Altstadt", "placeZh": "老城区", "titleZh": "问路进阶、看地图"}, {"place": "Restaurant", "placeZh": "餐厅", "titleZh": "点菜、说喜欢不喜欢"}], "guide": [{"t": "ü", "b": "就是拼音的 ü：嘴撅圆，舌头念“衣”。", "ex": [{"w": "Grüezi", "zh": "你好"}, {"w": "drü", "zh": "三"}]}, {"t": "ö", "b": "嘴形摆成“欧”，舌头念“诶”。有点像英文 bird 里的 ir，但嘴更圆。", "ex": [{"w": "nöd", "zh": "不"}, {"w": "schön", "zh": "美好"}]}, {"t": "ä", "b": "嘴张得很大的“诶”，像英文 cat 里的 a。", "ex": [{"w": "zäh", "zh": "十"}, {"w": "sächs", "zh": "六"}]}, {"t": "ch", "b": "从喉咙后面擦出来的“喝”，比拼音 h 更粗、更响。瑞士人说得特别重。", "ex": [{"w": "acht", "zh": "八"}, {"w": "Chuchichäschtli", "zh": "小厨柜"}]}, {"t": "k 变成 ch", "b": "标准德语的 k，苏黎世话常常念成上面那个 ch。", "ex": [{"w": "Chan ich mit Charte zahle?", "zh": "可以刷卡吗？"}]}, {"t": "ie、ue、üe 拆成两段", "b": "标准德语里这些是一个长音，瑞士话要拆成两小段：ue 念“乌-诶”，üe 念“ü-诶”。", "ex": [{"w": "Guet", "zh": "好"}, {"w": "Grüezi", "zh": "你好"}]}, {"t": "st、sp 念成“施特”“施普”", "b": "st 不念“斯特”，要念“施特”（舌头卷一点）。", "ex": [{"w": "Was choschtet das?", "zh": "多少钱？"}]}, {"t": "词尾的 n 常被吞掉", "b": "标准德语里结尾的 -en，瑞士话常常只说 -e。", "ex": [{"w": "sibe", "zh": "七（标准德语 sieben）"}, {"w": "Und Ihne?", "zh": "您呢？（标准德语 Ihnen）"}]}, {"t": "重音在前面", "b": "大多数瑞士德语词，重音落在第一个音节。注音里加粗的就是要重读的部分。", "ex": []}]};</script>
+<script>
+const $=s=>document.querySelector(s);
+function h(tag,attrs,...kids){
+  const el=document.createElement(tag);
+  for(const [k,v] of Object.entries(attrs||{})){
+    if(v==null||v===false)continue;
+    if(k.startsWith('on'))el.addEventListener(k.slice(2),v);
+    else if(k==='html')el.innerHTML=v;
+    else el.setAttribute(k,v===true?'':v);
+  }
+  for(const k of kids.flat(9)){if(k==null||k===false)continue;el.append(k.nodeType?k:document.createTextNode(k))}
+  return el;
+}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const hzHTML=s=>esc(s).replace(/\*([^*]+)\*/g,'<b>$1</b>');
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const LESSONS=DATA.lessons;
+const lessonById=id=>LESSONS.find(l=>l.id===id);
+
+/* ---------- saved progress (per browser) ---------- */
+const KEY='zueri-monat-v1';
+let st={done:{},seen:{}};
+try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&s.done)st=Object.assign(st,s)}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
+const seenOf=id=>st.seen[id]||(st.seen[id]=[]);
+function markSeen(id,step){const s=seenOf(id);if(!s.includes(step)){s.push(step);save()}}
+
+/* ---------- speech: recorded audio first, the device's German voice as a fallback ---------- */
+const akey=t=>{let x=2166136261;for(let i=0;i<t.length;i++){x^=t.charCodeAt(i);x=Math.imul(x,16777619)>>>0}return ('0000000'+x.toString(16)).slice(-8)};
+const synth=('speechSynthesis' in window)?window.speechSynthesis:null;
+let player=null,ttsVoice=null;
+function pickVoice(){
+  if(!synth)return;
+  const vs=(synth.getVoices()||[]).filter(v=>/^de/i.test(v.lang));
+  ttsVoice=vs.find(v=>/de[-_]CH/i.test(v.lang))||vs[0]||null;
+}
+if(synth){pickVoice();synth.addEventListener&&synth.addEventListener('voiceschanged',pickVoice)}
+function stopAll(){if(player){player.onended=null;player.pause();player=null}if(synth)synth.cancel()}
+function speakTTS(text,slow,done){
+  if(!synth){done&&done();return}
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='de-CH';if(ttsVoice)u.voice=ttsVoice;u.rate=slow?0.6:0.9;
+  u.onend=()=>done&&done();u.onerror=()=>done&&done();
+  synth.speak(u);
+}
+function speak(text,slow,done){
+  if(!text)return;
+  stopAll();
+  const a=new Audio('audio/'+akey(text)+'.mp3');player=a;
+  a.playbackRate=slow?0.7:1;
+  a.onended=()=>{if(player===a){player=null;done&&done()}};
+  a.addEventListener('error',()=>{if(player!==a)return;player=null;$('#warn').hidden=false;speakTTS(text,slow,done)});
+  const p=a.play();if(p&&p.catch)p.catch(()=>{});
+}
+const said=o=>o.say||o.w;
+const ICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>';
+function spk(text,label){
+  const b=h('button',{type:'button','aria-label':'播放发音',onclick:e=>{e.stopPropagation();speak(text)}});
+  b.innerHTML=ICON;if(label)b.append(label);
+  const s=h('button',{type:'button','aria-label':'慢速播放',onclick:e=>{e.stopPropagation();speak(text,true)}},'慢速');
+  return h('span',{class:'spk'},b,s);
+}
+const exLine=e=>h('div',{class:'exl'},h('div',{class:'line'},h('span',{class:'w',lang:'gsw'},e.w),spk(said(e))),h('p',{class:'zh'},e.zh));
+
+/* ---------- pages ---------- */
+const STEPS=['故事','单词','说法','对话','练习'];
+const starText=n=>'★'.repeat(n)+'☆'.repeat(3-n);
+
+function home(){
+  const intro=DATA.intro;
+  const board=h('section',{class:'board','aria-label':'课程路线'},
+    h('div',{class:'board-h'},h('b',{},'Abfahrt 出发'),h('span',{},'第一周 · 共 '+LESSONS.length+' 站已开通')),
+    LESSONS.map(l=>{
+      const done=st.done[l.id];
+      const started=(st.seen[l.id]||[]).length;
+      return h('a',{class:'row',href:'#/l/'+l.id+'/0'},
+        h('span',{class:'gleis','aria-label':'第 '+l.id+' 站'},l.id),
+        h('span',{class:'dest'},h('b',{lang:'gsw'},l.title),h('span',{},l.placeZh+' · '+l.titleZh)),
+        h('span',{class:'state'},done?h('span',{class:'star','aria-label':done+' 颗星'},starText(done)):started?'学习中 →':'出发 →'));
+    }),
+    DATA.soon.map((s,i)=>h('div',{class:'row soon'},
+      h('span',{class:'gleis'},LESSONS.length+i+1),
+      h('span',{class:'dest'},h('b',{},s.placeZh),h('span',{},s.titleZh)),
+      h('span',{class:'state'},'即将开通'))));
+  return [
+    h('section',{class:'card'},
+      h('p',{class:'story'},intro.story),
+      h('details',{style:'margin-top:12px',open:!Object.keys(st.seen).length},h('summary',{},'开始前，先知道三件事'),h('ul',{},intro.facts.map(f=>h('li',{},f))))),
+    board];
+}
+
+function stepNav(l,cur){
+  const seen=seenOf(l.id),ready=[0,1,2,3].every(i=>seen.includes(i));
+  return h('nav',{class:'steps','aria-label':'本课步骤'},STEPS.map((n,i)=>
+    h('a',{href:'#/l/'+l.id+'/'+i,class:(seen.includes(i)?'seen ':'')+(i===4&&!ready?'locked':''),'aria-current':i===cur?'step':null},
+      h('i',{},i===4&&!ready?'🔒':i+1),n)));
+}
+const nextBtn=(l,i,label)=>h('a',{class:'next',href:'#/l/'+l.id+'/'+i},label);
+
+function lessonPage(l,step){
+  if(step!==4)markSeen(l.id,step);
+  const head=[h('a',{class:'back',href:'#/'},'← 返回路线'),
+    h('div',{class:'sign'},h('b',{lang:'gsw'},l.place),h('span',{},'第 '+l.id+' 站 · '+l.placeZh)),
+    stepNav(l,step)];
+  let body;
+  if(step===0)body=[
+    h('section',{class:'card'},h('p',{class:'story'},l.story),
+      h('p',{class:'goal'},h('b',{},'这一站学：'),l.titleZh,'（',l.vocab.length,' 个词句）')),
+    nextBtn(l,1,'开始学单词 →')];
+  else if(step===1)body=[
+    h('p',{class:'note'},'每个词下面的汉字是读音近似，加粗的地方要重读。录音是电脑配音，方言词只能念个大概，以注音和提示为准。'),
+    h('div',{class:'vlist'},l.vocab.map(v=>h('article',{class:'card v'},
+      h('div',{class:'line'},h('span',{class:'w',lang:'gsw'},v.w),spk(said(v))),
+      h('p',{class:'zh'},v.zh),
+      h('p',{class:'hz',html:'<em>读音</em>'+hzHTML(v.hz)}),
+      v.tip&&h('p',{class:'tip'},'👄 ',v.tip),
+      h('p',{class:'mem'},'🧠 ',v.mem),
+      h('p',{class:'meta'},h('span',{},'英 ',h('i',{lang:'en'},v.en)),h('span',{},'标准德语 ',h('i',{lang:'de'},v.de)))))),
+    nextBtn(l,2,'学说法 →')];
+  else if(step===2)body=[
+    l.points.map(p=>h('section',{class:'card pt'},h('h3',{},p.t),h('p',{},p.b),
+      p.ex.length?h('div',{class:'ex'},p.ex.map(exLine)):null)),
+    nextBtn(l,3,'听对话 →')];
+  else if(step===3){
+    const bubs=l.dialog.map(d=>h('div',{class:'bub'+(d.s==='你'?' me':'')},
+      h('span',{class:'who'},d.s),h('div',{class:'line'},h('span',{class:'w',lang:'gsw'},d.w),spk(d.w)),h('p',{class:'zh'},d.zh)));
+    const playAll=()=>{let i=0;const go=()=>{bubs.forEach(b=>b.classList.remove('playing'));if(i>=bubs.length)return;
+      bubs[i].classList.add('playing');bubs[i].scrollIntoView({block:'nearest',behavior:'smooth'});speak(l.dialog[i].w,false,()=>{i++;setTimeout(go,350)})};go()};
+    body=[
+      h('div',{class:'btnrow',style:'justify-content:flex-start'},h('button',{class:'btn2',type:'button',onclick:playAll,html:ICON.replace('aria-hidden','style="width:16px;height:16px;vertical-align:-3px" aria-hidden')+' 播放整段对话'})),
+      h('div',{class:'dlg'},bubs),
+      h('section',{class:'card'},h('h2',{},'🇨🇭 文化小知识'),h('p',{},l.culture)),
+      nextBtn(l,4,'去练习 →')];
+  }
+  else body=practice(l);
+  return [head,body];
+}
+
+/* ---------- practice ---------- */
+let Q=null;
+function makeQuiz(l){
+  const pool=l.vocab, qs=[];
+  const zhOf=v=>v.zh;
+  shuffle(pool).slice(0,4).forEach(v=>qs.push({type:'listen',v,opts:shuffle([v,...shuffle(pool.filter(x=>x!==v)).slice(0,3)])}));
+  shuffle(pool).slice(0,3).forEach(v=>qs.push({type:'pick',v,opts:shuffle([v,...shuffle(pool.filter(x=>x!==v)).slice(0,3)])}));
+  l.quiz.forEach(q=>qs.push({type:'quiz',q,opts:shuffle(q.opts)}));
+  const builds=shuffle(l.dialog.filter(d=>d.b&&d.w.split(' ').length>=3)).slice(0,2).map(d=>({type:'build',d,tokens:shuffle(d.w.split(' '))}));
+  // easy recognition first, situations in the middle, building sentences last
+  return {id:l.id,qs:[...shuffle(qs.slice(0,7)),...shuffle(qs.slice(7)),...builds],i:0,miss:0,answered:false};
+}
+function practice(l){
+  const seen=seenOf(l.id);
+  if(![0,1,2,3].every(i=>seen.includes(i)))return [h('section',{class:'card locked-box'},
+    h('p',{style:'font-size:2rem'},'🔒'),h('p',{},'先学再练：把前面四步（故事、单词、说法、对话）都看一遍，练习就会打开。'),
+    h('div',{class:'btnrow',style:'justify-content:center;margin-top:14px'},
+      [0,1,2,3].filter(i=>!seen.includes(i)).map(i=>h('a',{class:'btn2',href:'#/l/'+l.id+'/'+i},'去看「'+STEPS[i]+'」'))))];
+  if(!Q||Q.id!==l.id)Q=makeQuiz(l);
+  const box=h('div',{});
+  drawQ(l,box);
+  return [box];
+}
+function drawQ(l,box){
+  const q=Q.qs[Q.i];
+  if(!q)return drawResult(l,box);
+  Q.answered=false;
+  const fb=h('div',{});
+  const prog=h('div',{class:'prog',role:'progressbar','aria-valuenow':Q.i,'aria-valuemax':Q.qs.length},h('i',{style:'width:'+(Q.i/Q.qs.length*100)+'%'}));
+  const card=h('section',{class:'card'});
+  const finish=(ok,expl)=>{
+    Q.answered=true;if(!ok)Q.miss++;
+    fb.replaceChildren(h('div',{class:'fb '+(ok?'good':'badf')},h('b',{},ok?'答对了！':'再记一下：'),expl),
+      h('div',{class:'btnrow',style:'margin-top:12px'},h('button',{class:'next',type:'button',onclick:()=>{Q.i++;drawQ(l,box);window.scrollTo({top:0,behavior:'smooth'})}},Q.i+1<Q.qs.length?'下一题 →':'看结果')));
+  };
+  const vExpl=v=>h('span',{},h('span',{lang:'gsw',style:'font-weight:700'},v.w),' = ',v.zh,'。读音 ',h('span',{html:hzHTML(v.hz)}),'。 🧠 ',v.mem);
+  const choose=(opts,label,isRight,expl,audio)=>h('div',{class:'opts'},opts.map(o=>{
+    const b=h('button',{class:'opt',type:'button',onclick:()=>{
+      if(Q.answered)return;
+      const ok=isRight(o);
+      [...b.parentNode.children].forEach((x,k)=>{x.disabled=true;if(isRight(opts[k]))x.classList.add('right')});
+      if(!ok)b.classList.add('wrong');
+      finish(ok,expl);
+    }},h('span',{lang:label(o).lang},label(o).text),audio?spk(audio(o)):null);
+    return b;
+  }));
+  if(q.type==='listen'){
+    card.append(h('p',{class:'q'},'听录音，选出意思'),h('div',{class:'big-spk'},spk(said(q.v),'再听一遍')),
+      choose(q.opts,o=>({text:o.zh}),o=>o===q.v,vExpl(q.v)));
+    setTimeout(()=>speak(said(q.v)),250);
+  }else if(q.type==='pick'){
+    card.append(h('p',{class:'q'},'「'+q.v.zh+'」用瑞士德语怎么说？'),
+      choose(q.opts,o=>({text:o.w,lang:'gsw'}),o=>o===q.v,vExpl(q.v)));
+  }else if(q.type==='quiz'){
+    const z=q.q.zhOpts;
+    card.append(h('p',{class:'q'},q.q.q),z?h('div',{class:'big-spk'},spk(q.opts[0].w,'听一听')):null,
+      choose(q.opts,o=>z?{text:o.zh}:{text:o.w,lang:'gsw'},o=>!!o.ok,q.q.why,z?null:o=>o.w));
+  }else{
+    const ans=[];const target=q.d.w;
+    const line=h('div',{class:'tokens','aria-label':'你的句子'});
+    const pool=h('div',{class:'tokens pool'});
+    const check=h('button',{class:'next',type:'button',disabled:true,onclick:()=>{
+      if(Q.answered)return;
+      const ok=ans.map(a=>a.t).join(' ')===target;
+      check.disabled=true;[...pool.children,...line.children].forEach(x=>x.disabled=true);
+      speak(target);
+      finish(ok,h('span',{},h('span',{lang:'gsw',style:'font-weight:700'},target),' — ',q.d.zh));
+    }},'检查');
+    const redraw=()=>{
+      line.replaceChildren(...ans.map((a,k)=>h('button',{class:'tok',type:'button',lang:'gsw',onclick:()=>{if(Q.answered)return;ans.splice(k,1);redraw()}},a.t)));
+      pool.replaceChildren(...q.tokens.map((t,k)=>h('button',{class:'tok'+(ans.some(a=>a.k===k)?' used':''),type:'button',lang:'gsw',onclick:()=>{if(Q.answered||ans.some(a=>a.k===k))return;ans.push({t,k});redraw()}},t)));
+      check.disabled=ans.length!==q.tokens.length||Q.answered;
+    };
+    redraw();
+    card.append(h('p',{class:'q'},'把词排成这句话：'),h('p',{},'「'+q.d.zh+'」'),line,h('p',{class:'small muted',style:'margin-top:10px'},'点下面的词按顺序放上去，点上面的词可以拿掉。'),pool,
+      h('div',{class:'btnrow',style:'margin-top:12px'},check));
+  }
+  box.replaceChildren(h('p',{class:'small muted'},'第 '+(Q.i+1)+' / '+Q.qs.length+' 题'),prog,h('div',{style:'height:12px'}),card,fb);
+}
+function drawResult(l,box){
+  const n=Q.miss<=1?3:Q.miss<=3?2:1;
+  st.done[l.id]=Math.max(st.done[l.id]||0,n);save();
+  const nx=lessonById(l.id+1);
+  box.replaceChildren(h('section',{class:'card result'},
+    h('p',{class:'muted'},'第 '+l.id+' 站 · '+l.placeZh),
+    h('p',{class:'stars','aria-label':n+' 颗星（满分 3 颗）'},'★'.repeat(n),h('span',{},'★'.repeat(3-n))),
+    h('p',{},Q.qs.length+' 题里错了 '+Q.miss+' 次。'+(n===3?'太棒了，Vreni 为你鼓掌！':n===2?'不错！把错的那几个词再听两遍。':'回去把单词卡再看一遍，然后再来一次吧。')),
+    h('div',{class:'btnrow',style:'justify-content:center;margin-top:16px'},
+      h('button',{class:'btn2',type:'button',onclick:()=>{Q=makeQuiz(l);drawQ(l,box)}},'再练一次'),
+      nx?h('a',{class:'next',href:'#/l/'+nx.id+'/0',onclick:()=>{Q=null}},'下一站：'+nx.placeZh+' →'):h('a',{class:'next',href:'#/'},'回到路线'))));
+}
+
+function guidePage(){
+  return [h('section',{class:'card'},h('h2',{},'读音小抄'),h('p',{class:'muted small'},'瑞士德语里几个和中文、英文不一样的音。每课单词下面的汉字注音，就是照这些规则写的。')),
+    h('div',{class:'glist'},DATA.guide.map(g=>h('section',{class:'card pt'},h('h3',{lang:'gsw'},g.t),h('p',{},g.b),g.ex.length?h('div',{class:'ex'},g.ex.map(exLine)):null)))];
+}
+function wordsPage(){
+  return [h('section',{class:'card'},h('h2',{},'生词本'),h('p',{class:'muted small'},'学过的所有词句，随时回来听。')),
+    LESSONS.map(l=>h('section',{class:'card'},h('h2',{},'第 '+l.id+' 站 · '+l.placeZh),
+      l.vocab.map(v=>h('div',{class:'wordrow'},h('span',{class:'w',lang:'gsw'},v.w),spk(said(v)),h('p',{class:'hz',html:hzHTML(v.hz)}),h('p',{class:'zh'},v.zh)))))];
+}
+
+function render(){
+  stopAll();
+  const r=location.hash.replace(/^#\/?/,'').split('/');
+  let tab='home',view;
+  if(r[0]==='l'&&lessonById(+r[1])){const s=Math.min(4,Math.max(0,+r[2]||0));view=lessonPage(lessonById(+r[1]),s)}
+  else if(r[0]==='guide'){tab='guide';view=guidePage()}
+  else if(r[0]==='words'){tab='words';view=wordsPage()}
+  else view=home();
+  document.querySelectorAll('.tabs a').forEach(a=>a.setAttribute('aria-current',a.dataset.tab===tab?'page':'false'));
+  $('#app').replaceChildren(h('div',{style:'display:flex;flex-direction:column;gap:16px'},view));
+  window.scrollTo(0,0);
+}
+addEventListener('hashchange',render);
+render();
+</script>
+
+</body></html>

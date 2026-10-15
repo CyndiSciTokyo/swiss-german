@@ -1,0 +1,1300 @@
+{
+ "intro": {
+  "title": "苏黎世一个月",
+  "sub": "Ein Monat z Züri",
+  "story": "你要在苏黎世住一个月。房东是一位退休的苏黎世阿姨 Vreni，她说一口地道的苏黎世话。每一课是这座城市里的一站：火车站、面包店、市集、电车、湖边咖啡馆……跟着她，一站一站学会当地人每天挂在嘴边的话。",
+  "facts": [
+   "瑞士德语基本只用来“说”。瑞士人聊天说方言，但写东西、看报纸、正式场合都用标准德语（德国那种德语）。所以这里只学“听懂 + 说几句”。",
+   "方言没有统一拼法，同一个词在不同地方写法、读法都可能不一样。这里按苏黎世话来。",
+   "录音是电脑配音：它念的是“带瑞士口音的标准德语”，方言词只能念个大概。发音以每个词下面的汉字注音和提示为准。"
+  ]
+ },
+ "lessons": [
+  {
+   "id": 1,
+   "place": "Hauptbahnhof",
+   "placeZh": "苏黎世火车总站",
+   "title": "Grüezi！",
+   "titleZh": "打招呼和道别",
+   "story": "你拖着行李箱走出列车，苏黎世火车总站的大厅高高的，屋顶下吊着一尊五彩的胖天使雕像。人群里，一位满头银发的阿姨举着写着你名字的牌子，正朝你笑——她就是你的房东 Vreni。",
+   "vocab": [
+    {
+     "w": "Grüezi",
+     "zh": "你好（对陌生人、礼貌场合）",
+     "hz": "*格吕*-诶-慈",
+     "de": "Guten Tag",
+     "en": "Hello (polite)",
+     "tip": "ü 就是拼音里的 ü：嘴撅圆念“衣”。ue 要拆成“ü-诶”两小段，最后的 zi 念“茨衣”。",
+     "mem": "英文 greet + “zi”：greet-zi，跟人打招呼就说 Grüezi。这是你在瑞士最常用的一个词。"
+    },
+    {
+     "w": "Hoi",
+     "zh": "嗨（熟人、朋友之间）",
+     "hz": "*霍伊*（快读成一个音）",
+     "de": "Hallo",
+     "en": "Hi",
+     "mem": "像水手喊的 “Ahoy!”，把 A 去掉就是 Hoi。"
+    },
+    {
+     "w": "Wie gaht's?",
+     "zh": "最近好吗？",
+     "hz": "维 *嘎*-茨",
+     "de": "Wie geht's?",
+     "en": "How's it going?",
+     "mem": "gaht 就是英文 go：“How goes it?” → Wie gaht's?"
+    },
+    {
+     "w": "Guet, merci.",
+     "zh": "很好，谢谢。",
+     "hz": "*古*-诶特，*没*-儿西",
+     "de": "Gut, danke.",
+     "en": "Good, thanks.",
+     "tip": "Guet 要念成“古-诶特”两段，不是英文 good。merci 重音在前面。",
+     "mem": "Guet ≈ good。merci 是法语的“谢谢”——瑞士有四种官方语言，德语区的人也天天说 merci。"
+    },
+    {
+     "w": "Und Ihne?",
+     "say": "Und Ihne? Und dir?",
+     "zh": "您呢？（对熟人说 Und dir? 你呢？）",
+     "hz": "温德 *伊*-讷？／温德 *迪*-尔？",
+     "de": "Und Ihnen? / Und dir?",
+     "en": "And you?",
+     "tip": "瑞士话常把词尾的 n 吞掉：标准德语 Ihnen 在这里变成 Ihne。",
+     "mem": "dir 像英文 dear（亲爱的）——只有熟人才用 dir，陌生人用 Ihne。"
+    },
+    {
+     "w": "Ich heisse …",
+     "say": "Ich heisse Lin.",
+     "zh": "我叫……",
+     "hz": "伊赫 *海*-瑟 ……",
+     "de": "Ich heisse …",
+     "en": "My name is …",
+     "tip": "ch 是从喉咙后面擦出来的“喝”，比拼音 h 更粗、更响。",
+     "mem": "heisse 念起来像 high-se：大声（high）说出自己的名字。"
+    },
+    {
+     "w": "Freut mi!",
+     "zh": "很高兴认识你！",
+     "hz": "*弗罗伊*特 米",
+     "de": "Freut mich!",
+     "en": "Nice to meet you!",
+     "mem": "Freude 是“欢乐”（《欢乐颂》就是 Ode an die Freude），mi = me：“joy for me”。"
+    },
+    {
+     "w": "Uf Widerluege!",
+     "zh": "再见！（礼貌场合）",
+     "hz": "乌夫 *维*-德-卢-诶-格",
+     "de": "Auf Wiedersehen!",
+     "en": "Goodbye!",
+     "mem": "拆开看：uf = on，wider = again，luege = look（luege 和英文 look 是亲戚）→ “look again”，下次再见。"
+    },
+    {
+     "w": "Tschüss!",
+     "say": "Tschüss! Ciao!",
+     "zh": "拜拜！（熟人；也常说 Ciao!）",
+     "hz": "*丘*斯！／*乔*！",
+     "de": "Tschüss!",
+     "en": "Bye!",
+     "mem": "Ciao 就是意大利语那个 ciao——瑞士南部讲意大利语，苏黎世人也爱用。"
+    },
+    {
+     "w": "En schöne Tag no!",
+     "zh": "祝你今天愉快！",
+     "hz": "恩 *舍*-讷 *塔*格 诺",
+     "de": "Einen schönen Tag noch!",
+     "en": "Have a nice day!",
+     "tip": "ö：嘴形摆成“欧”，舌头却念“诶”，有点像英文 bird 里的 ir。",
+     "mem": "schön 和英文 shine 长得像：a shining day，美好的一天。"
+    }
+   ],
+   "points": [
+    {
+     "t": "礼貌说法 和 熟人说法",
+     "b": "对陌生人、店员、长辈：Grüezi 打招呼，Uf Widerluege 道别，问“您呢”用 Und Ihne?。对朋友、同龄人：Hoi 打招呼，Tschüss / Ciao 道别，用 Und dir?。拿不准就用礼貌的那套，不会出错。",
+     "ex": [
+      {
+       "w": "Grüezi! Wie gaht's Ihne?",
+       "zh": "您好！您好吗？（礼貌）"
+      },
+      {
+       "w": "Hoi! Wie gaht's dir?",
+       "zh": "嗨！你好吗？（熟人）"
+      }
+     ]
+    },
+    {
+     "t": "进门有好几个人？加一个 mitenand",
+     "b": "mitenand 意思是“大家”。走进一家小店、电梯、等候室，里面有好几个人，就说 Grüezi mitenand，瑞士人很讲究这个。",
+     "ex": [
+      {
+       "w": "Grüezi mitenand!",
+       "zh": "大家好！"
+      }
+     ]
+    },
+    {
+     "t": "名字前面加个 d",
+     "b": "苏黎世人说女性的名字时，前面常带一个小小的 d（相当于“这位”），说男性名字时带 de。所以 Vreni 会介绍自己是 d Vreni。听到别慌，它就是个冠词（放在名词前面的小词，类似英文的 the）。",
+     "ex": [
+      {
+       "w": "Ich bin d Vreni.",
+       "zh": "我是 Vreni。"
+      }
+     ]
+    }
+   ],
+   "dialog": [
+    {
+     "s": "Vreni",
+     "w": "Grüezi! Ich bin d Vreni.",
+     "zh": "您好！我是 Vreni。"
+    },
+    {
+     "s": "你",
+     "w": "Grüezi! Ich heisse Lin. Freut mi!",
+     "zh": "您好！我叫林。很高兴认识您！",
+     "b": 1
+    },
+    {
+     "s": "Vreni",
+     "w": "Freut mi au! Wie gaht's Ihne?",
+     "zh": "我也很高兴！您好吗？"
+    },
+    {
+     "s": "你",
+     "w": "Guet, merci. Und Ihne?",
+     "zh": "很好，谢谢。您呢？",
+     "b": 1
+    },
+    {
+     "s": "Vreni",
+     "w": "Super, merci! Chömed Sie, mir gönd hei.",
+     "zh": "很好，谢谢！来吧，我们回家。"
+    }
+   ],
+   "culture": "苏黎世火车总站大厅里吊着的那尊五彩胖天使叫“守护天使”，是法国艺术家 Niki de Saint Phalle 的作品，几乎每个初到苏黎世的人都会抬头看它。瑞士人第一次见面握手；熟人之间常常左右左亲脸颊三下。",
+   "quiz": [
+    {
+     "q": "你走进一家小面包店，里面已经有三位客人。你开口说：",
+     "opts": [
+      {
+       "w": "Grüezi mitenand!",
+       "ok": 1
+      },
+      {
+       "w": "Tschüss!"
+      },
+      {
+       "w": "Freut mi!"
+      }
+     ],
+     "why": "进门对一屋子人打招呼用 Grüezi mitenand。Tschüss 是“拜拜”，Freut mi 是“很高兴认识你”。"
+    },
+    {
+     "q": "Vreni 问你：“Wie gaht's Ihne?”，你回答：",
+     "opts": [
+      {
+       "w": "Guet, merci. Und Ihne?",
+       "ok": 1
+      },
+      {
+       "w": "Uf Widerluege!"
+      },
+      {
+       "w": "Ich heisse Lin."
+      }
+     ],
+     "why": "她问你好不好，回答“很好，谢谢，您呢？”。"
+    },
+    {
+     "q": "和年轻的室友道别，最自然的说法是：",
+     "opts": [
+      {
+       "w": "Tschüss!",
+       "ok": 1
+      },
+      {
+       "w": "Grüezi!"
+      },
+      {
+       "w": "Wie gaht's?"
+      }
+     ],
+     "why": "熟人之间道别用 Tschüss 或 Ciao。Grüezi 是见面时说的。"
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "place": "Beck",
+   "placeZh": "街角面包店",
+   "title": "Es Gipfeli, bitte",
+   "titleZh": "买早餐、说谢谢",
+   "story": "第二天一早，Vreni 递给你一个布袋：“去街角的 Beck（面包店）买两个 Gipfeli 回来，我煮咖啡。”玻璃柜里摆满了金黄的牛角面包、辫子面包和中间带一道缝的小圆面包。",
+   "vocab": [
+    {
+     "w": "Was dörfs sii?",
+     "zh": "您要点什么？（店员常说）",
+     "hz": "瓦斯 *德*尔夫斯 西",
+     "de": "Was darf es sein?",
+     "en": "What can I get you?",
+     "tip": "sii 念长长的“西——”。",
+     "mem": "逐字是 “What may it be?”。店员一说 “…dörfs sii?”，就是轮到你点单了。"
+    },
+    {
+     "w": "Ich hett gärn …",
+     "say": "Ich hett gärn es Gipfeli.",
+     "zh": "我想要……",
+     "hz": "伊赫 *嘿*特 *给*恩 ……",
+     "de": "Ich hätte gern …",
+     "en": "I'd like …",
+     "mem": "中文谐音“嘿特，给嗯……”——“嘿，给我……”。英文 gärn 像 yearn（渴望）。"
+    },
+    {
+     "w": "es Gipfeli",
+     "zh": "一个牛角面包（可颂）",
+     "hz": "埃斯 *吉*普-菲-利",
+     "de": "ein Croissant",
+     "en": "a croissant",
+     "mem": "Gipfel 是“山峰”，-li 是“小”→ “小山尖”：可颂两头翘起，像一座小山。"
+    },
+    {
+     "w": "es Weggli",
+     "zh": "一个小白面包",
+     "hz": "埃斯 *韦*格-利",
+     "de": "ein Brötchen",
+     "en": "a bread roll",
+     "mem": "Weg = way，路。Weggli 中间有一道“小路”似的缝，掰开正好两半。"
+    },
+    {
+     "w": "bitte",
+     "zh": "请",
+     "hz": "*比*-特",
+     "de": "bitte",
+     "en": "please",
+     "mem": "英文 a bit：请给我 a bit。"
+    },
+    {
+     "w": "Merci vilmal!",
+     "zh": "非常感谢！",
+     "hz": "*没*-儿西 *菲*尔-马尔",
+     "de": "Vielen Dank!",
+     "en": "Thanks a lot!",
+     "mem": "vil = many，mal = times：“merci many times”。"
+    },
+    {
+     "w": "Gärn gscheh!",
+     "zh": "不客气！",
+     "hz": "*给*恩 格-*舍*",
+     "de": "Gern geschehen!",
+     "en": "You're welcome!",
+     "mem": "逐字是 “gladly done”（乐意效劳）。gscheh 谐音“格谢”：你格外感谢，我说不客气。"
+    },
+    {
+     "w": "Süsch no öppis?",
+     "zh": "还要别的吗？",
+     "hz": "*居*施 诺 *厄*皮斯",
+     "de": "Sonst noch etwas?",
+     "en": "Anything else?",
+     "mem": "öppis = something。念起来像 “a piece”：再来一 piece 吗？"
+    },
+    {
+     "w": "Nei, das isch alles.",
+     "zh": "不用了，就这些。",
+     "hz": "奈，达斯 伊施 *阿*勒斯",
+     "de": "Nein, das ist alles.",
+     "en": "No, that's all.",
+     "mem": "几乎就是英文：Nei = nay，isch = is，alles = all → “Nay, that is all.”"
+    },
+    {
+     "w": "Exgüsi!",
+     "zh": "不好意思／打扰一下",
+     "hz": "埃克斯-*居*-西",
+     "de": "Entschuldigung!",
+     "en": "Excuse me!",
+     "mem": "来自法语 excusez：念成 “excuse-y” 就对了。问路、借过、碰到人都能用。"
+    }
+   ],
+   "points": [
+    {
+     "t": "万能点单句：Ich hett gärn + 东西 + bitte",
+     "b": "面包店、咖啡馆、车站售票窗口都能用。把东西换掉就行。",
+     "ex": [
+      {
+       "w": "Ich hett gärn es Gipfeli, bitte.",
+       "zh": "我想要一个牛角面包，谢谢。"
+      },
+      {
+       "w": "Ich hett gärn zwei Weggli, bitte.",
+       "zh": "我想要两个小面包，谢谢。"
+      }
+     ]
+    },
+    {
+     "t": "词尾的 -li 表示“小”",
+     "b": "瑞士人特别爱在词尾加 -li，表示“小小的、可爱的”。Gipfeli、Weggli、Chuchichäschtli（小厨柜）都是这样。听到 -li，就知道是个小东西。",
+     "ex": [
+      {
+       "w": "es Chuchichäschtli",
+       "zh": "一个小厨柜（瑞士人最爱拿来考外国人的词）"
+      }
+     ]
+    },
+    {
+     "t": "“一个”有三种说法：en / e / es",
+     "b": "德语的名词分三种“性别”（阳性、阴性、中性，只是语法上的分类，跟东西本身无关），“一个”就分别说 en、e、es。不用背规则，跟着词整体记：es Gipfeli、en Kafi、e Schale。",
+     "ex": []
+    }
+   ],
+   "dialog": [
+    {
+     "s": "店员",
+     "w": "Grüezi! Was dörfs sii?",
+     "zh": "您好！您要点什么？"
+    },
+    {
+     "s": "你",
+     "w": "Grüezi! Ich hett gärn zwei Gipfeli, bitte.",
+     "zh": "您好！我想要两个牛角面包，谢谢。",
+     "b": 1
+    },
+    {
+     "s": "店员",
+     "w": "Gärn. Süsch no öppis?",
+     "zh": "好的。还要别的吗？"
+    },
+    {
+     "s": "你",
+     "w": "Nei, das isch alles. Merci.",
+     "zh": "不用了，就这些。谢谢。",
+     "b": 1
+    },
+    {
+     "s": "店员",
+     "w": "Das macht vier Franke.",
+     "zh": "一共四法郎。"
+    },
+    {
+     "s": "你",
+     "w": "Merci vilmal!",
+     "zh": "非常感谢！"
+    },
+    {
+     "s": "店员",
+     "w": "Gärn gscheh. En schöne Tag no!",
+     "zh": "不客气。祝你今天愉快！"
+    }
+   ],
+   "culture": "瑞士的 Gipfeli 比法国可颂更扎实、略带一点咸甜。周日瑞士大部分商店都关门，想买面包要找火车站里的店。早餐常见的还有辫子面包 Zopf，周末才吃。",
+   "quiz": [
+    {
+     "q": "店员问：“Süsch no öppis?”，你已经买够了，回答：",
+     "opts": [
+      {
+       "w": "Nei, das isch alles.",
+       "ok": 1
+      },
+      {
+       "w": "Gärn gscheh."
+      },
+      {
+       "w": "Was dörfs sii?"
+      }
+     ],
+     "why": "她问“还要别的吗”，你说“不用了，就这些”。"
+    },
+    {
+     "q": "店员对你说 “Merci vilmal!”，你回答：",
+     "opts": [
+      {
+       "w": "Gärn gscheh!",
+       "ok": 1
+      },
+      {
+       "w": "Exgüsi!"
+      },
+      {
+       "w": "Hoi!"
+      }
+     ],
+     "why": "别人谢你，回“不客气”：Gärn gscheh。"
+    },
+    {
+     "q": "排队时不小心碰到别人，你说：",
+     "opts": [
+      {
+       "w": "Exgüsi!",
+       "ok": 1
+      },
+      {
+       "w": "Bitte!"
+      },
+      {
+       "w": "Freut mi!"
+      }
+     ],
+     "why": "Exgüsi 就是“不好意思”。"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "place": "Bürkliplatz-Märt",
+   "placeZh": "湖边的 Bürkliplatz 市集",
+   "title": "Was choschtet das?",
+   "titleZh": "数字和问价钱",
+   "story": "周二上午，Vreni 带你去湖边的 Bürkliplatz 市集。摊位上堆着红艳艳的草莓、一大块一大块的奶酪和刚剪下的鲜花。Vreni 小声说：“在这里买东西，要会数数，还要会问价钱。”",
+   "vocab": [
+    {
+     "w": "eis",
+     "zh": "一",
+     "hz": "*埃*斯",
+     "de": "eins",
+     "en": "one",
+     "mem": "扑克牌的 ace（A）就是“一”。"
+    },
+    {
+     "w": "zwei",
+     "zh": "二",
+     "hz": "*茨外*",
+     "de": "zwei",
+     "en": "two",
+     "mem": "英文 twice（两次）开头的 tw 换成 zw。"
+    },
+    {
+     "w": "drü",
+     "zh": "三",
+     "hz": "*德吕*",
+     "de": "drei",
+     "en": "three",
+     "mem": "three 的 th 变成 d，元音变成 ü：drü。"
+    },
+    {
+     "w": "vier",
+     "zh": "四",
+     "hz": "*菲*-尔",
+     "de": "vier",
+     "en": "four",
+     "tip": "v 在这里念 f。",
+     "mem": "v 念 f：vier ≈ four。"
+    },
+    {
+     "w": "föif",
+     "zh": "五",
+     "hz": "*弗厄伊*夫",
+     "de": "fünf",
+     "en": "five",
+     "tip": "öi 是先念 ö 再滑到“衣”。",
+     "mem": "f…f 两头和 five 一样。"
+    },
+    {
+     "w": "sächs",
+     "zh": "六",
+     "hz": "*赛*克斯",
+     "de": "sechs",
+     "en": "six",
+     "mem": "就是 six，嘴张大一点。"
+    },
+    {
+     "w": "sibe",
+     "zh": "七",
+     "hz": "*西*-贝",
+     "de": "sieben",
+     "en": "seven",
+     "mem": "seven 去掉词尾的 n（瑞士话爱吞词尾 n）。"
+    },
+    {
+     "w": "acht",
+     "zh": "八",
+     "hz": "*阿*赫特",
+     "de": "acht",
+     "en": "eight",
+     "tip": "ch 是喉咙里的“喝”。",
+     "mem": "eight 中间塞一个“喝”：a-喝-t。"
+    },
+    {
+     "w": "nüün",
+     "zh": "九",
+     "hz": "*纽*-恩",
+     "de": "neun",
+     "en": "nine",
+     "mem": "nine 的元音换成长长的 ü。"
+    },
+    {
+     "w": "zäh",
+     "zh": "十",
+     "hz": "*才*——（拖长）",
+     "de": "zehn",
+     "en": "ten",
+     "tip": "ä 是嘴张得很大的“诶”。",
+     "mem": "ten 的 t 变成 z，n 吞掉：zäh。"
+    },
+    {
+     "w": "Was choschtet das?",
+     "zh": "这个多少钱？",
+     "hz": "瓦斯 *霍*施特特 达斯",
+     "de": "Was kostet das?",
+     "en": "What does it cost?",
+     "tip": "瑞士话把 k 念成喉咙里的 ch（喝），把 st 念成 scht（施特）。",
+     "mem": "choschtet ≈ cost。"
+    },
+    {
+     "w": "Franke",
+     "zh": "法郎（瑞士的钱）",
+     "hz": "*弗朗*-克",
+     "de": "Franken",
+     "en": "Swiss francs",
+     "mem": "Franke = franc。口语里也说 Stutz，就像英文说 bucks（块钱）。"
+    },
+    {
+     "w": "Das isch tüür!",
+     "zh": "太贵了！",
+     "hz": "达斯 伊施 *提*-尔",
+     "de": "Das ist teuer!",
+     "en": "That's expensive!",
+     "mem": "tüür 像英文 tear（眼泪）：贵得想哭。"
+    },
+    {
+     "w": "Chan ich mit Charte zahle?",
+     "zh": "可以刷卡吗？",
+     "hz": "汉 伊赫 米特 *哈*尔特 *察*-勒",
+     "de": "Kann ich mit Karte zahlen?",
+     "en": "Can I pay by card?",
+     "mem": "Chan = can，Charte = card，zahle 像 tally（结账）。"
+    }
+   ],
+   "points": [
+    {
+     "t": "k 常常变成 ch",
+     "b": "这是苏黎世话最明显的特点之一：标准德语的 k，瑞士人念成喉咙里擦出来的 ch。Kann → Chan，Karte → Charte，kostet → choschtet。",
+     "ex": [
+      {
+       "w": "Chan ich mit Charte zahle?",
+       "zh": "可以刷卡吗？"
+      }
+     ]
+    },
+    {
+     "t": "价格怎么念",
+     "b": "先说法郎，再说零头的分（Rappe）。几个常用的整十：zwänzg（二十）、föifzg（五十）。所以 3.50 法郎说成 drü Franke föifzg。",
+     "ex": [
+      {
+       "w": "drü Franke föifzg",
+       "zh": "3.50 法郎"
+      },
+      {
+       "w": "zwänzg Franke",
+       "zh": "20 法郎"
+      }
+     ]
+    },
+    {
+     "t": "买东西的一句话",
+     "b": "指着东西说 Ich nimm das（我要这个），最省事。",
+     "ex": [
+      {
+       "w": "Ich nimm das, bitte.",
+       "zh": "我要这个，谢谢。"
+      }
+     ]
+    }
+   ],
+   "dialog": [
+    {
+     "s": "你",
+     "w": "Grüezi! Was choschtet das?",
+     "zh": "您好！这个多少钱？",
+     "b": 1
+    },
+    {
+     "s": "摊主",
+     "w": "D Erdbeeri? Sächs Franke.",
+     "zh": "草莓吗？六法郎。"
+    },
+    {
+     "s": "你",
+     "w": "Oh, das isch tüür!",
+     "zh": "哦，好贵啊！",
+     "b": 1
+    },
+    {
+     "s": "摊主",
+     "w": "Aber sie sind sehr fein!",
+     "zh": "但是很好吃哦！"
+    },
+    {
+     "s": "你",
+     "w": "Guet, ich nimm das. Chan ich mit Charte zahle?",
+     "zh": "好吧，我要了。可以刷卡吗？",
+     "b": 1
+    },
+    {
+     "s": "摊主",
+     "w": "Ja, kei Problem.",
+     "zh": "可以，没问题。"
+    }
+   ],
+   "culture": "Bürkliplatz 的市集每周二和周五上午开，就在苏黎世湖边。瑞士物价很高，一小盒草莓卖六七法郎很正常。瑞士人付小钱爱用手机 App TWINT 扫码，现金和银行卡也都能用。",
+   "quiz": [
+    {
+     "q": "“föif” 是几？",
+     "opts": [
+      {
+       "w": "föif",
+       "zh": "五",
+       "ok": 1
+      },
+      {
+       "w": "föif",
+       "zh": "四"
+      },
+      {
+       "w": "föif",
+       "zh": "七"
+      }
+     ],
+     "why": "föif = 五，f…f 和英文 five 一样。",
+     "zhOpts": 1
+    },
+    {
+     "q": "你想问能不能刷卡，说：",
+     "opts": [
+      {
+       "w": "Chan ich mit Charte zahle?",
+       "ok": 1
+      },
+      {
+       "w": "Was choschtet das?"
+      },
+      {
+       "w": "Das isch tüür!"
+      }
+     ],
+     "why": "Charte = card，zahle = pay。"
+    },
+    {
+     "q": "摊主说 “drü Franke föifzg”，你该付：",
+     "opts": [
+      {
+       "w": "drü Franke föifzg",
+       "zh": "3.50 法郎",
+       "ok": 1
+      },
+      {
+       "w": "drü Franke föifzg",
+       "zh": "5.30 法郎"
+      },
+      {
+       "w": "drü Franke föifzg",
+       "zh": "35 法郎"
+      }
+     ],
+     "why": "先说法郎（drü = 3），再说零头（föifzg = 50 分）。",
+     "zhOpts": 1
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "place": "Tram 4",
+   "placeZh": "蓝白色的电车上",
+   "title": "Ich verstah nöd",
+   "titleZh": "听不懂怎么办、问路",
+   "story": "下午你一个人坐蓝白色的电车去 Bellevue。车上一位老先生热情地跟你说了一长串话，你一个字也没听懂。别慌——这一课就学“救命句”：听不懂、请说慢一点、请问……在哪里。",
+   "vocab": [
+    {
+     "w": "Ich verstah nöd.",
+     "zh": "我听不懂。",
+     "hz": "伊赫 费尔-*施塔* *讷*德",
+     "de": "Ich verstehe nicht.",
+     "en": "I don't understand.",
+     "mem": "verstah ≈ understand（都有 stand/stah“站”）；nöd = not。nöd 看着像 nod（点头），意思却是“不”——摇头才对。"
+    },
+    {
+     "w": "Langsam, bitte.",
+     "zh": "请慢一点。",
+     "hz": "*朗*-萨姆，*比*-特",
+     "de": "Langsam, bitte.",
+     "en": "Slowly, please.",
+     "mem": "lang = long：拉长了说就是慢。"
+    },
+    {
+     "w": "Chönd Sie das widerhole?",
+     "zh": "您能再说一遍吗？",
+     "hz": "*肯*德 西 达斯 *维*德-霍勒",
+     "de": "Können Sie das wiederholen?",
+     "en": "Could you repeat that?",
+     "mem": "Chönd ≈ can（又是 k 变 ch）；wider = again，hole = 拿 → “再拿一次”= 重复。"
+    },
+    {
+     "w": "Reded Sie Änglisch?",
+     "zh": "您会说英语吗？",
+     "hz": "*雷*-德德 西 *恩*-利施",
+     "de": "Sprechen Sie Englisch?",
+     "en": "Do you speak English?",
+     "mem": "rede 像 read（读出来、说出来）。Änglisch 就是 English。"
+    },
+    {
+     "w": "Ich bin nöd vo da.",
+     "zh": "我不是本地人。",
+     "hz": "伊赫 宾 *讷*德 佛 *达*",
+     "de": "Ich bin nicht von hier.",
+     "en": "I'm not from here.",
+     "mem": "逐字就是 “I am not from there”。"
+    },
+    {
+     "w": "Wo isch …?",
+     "say": "Wo isch de Bahnhof?",
+     "zh": "……在哪里？",
+     "hz": "*沃* 伊施 ……",
+     "de": "Wo ist …?",
+     "en": "Where is …?",
+     "mem": "wo = where，isch = is。"
+    },
+    {
+     "w": "d Haltestell",
+     "zh": "车站（电车、公交站）",
+     "hz": "德 *哈*尔特-施特尔",
+     "de": "die Haltestelle",
+     "en": "the stop",
+     "mem": "halt = 英文 halt（停）：停车的地方。"
+    },
+    {
+     "w": "grad us",
+     "zh": "直走",
+     "hz": "格拉德 *乌*斯",
+     "de": "geradeaus",
+     "en": "straight ahead",
+     "mem": "grad ≈ straight，us = out：一直往外走。"
+    },
+    {
+     "w": "links / rächts",
+     "say": "links, rächts",
+     "zh": "左边 ／ 右边",
+     "hz": "*林*克斯 ／ *雷*赫茨",
+     "de": "links / rechts",
+     "en": "left / right",
+     "mem": "links 和 left 都是 l 开头；rächts 和 right 都是 r 开头。"
+    },
+    {
+     "w": "s Tram",
+     "zh": "电车",
+     "hz": "斯 *特拉*姆",
+     "de": "die Straßenbahn",
+     "en": "the tram",
+     "mem": "就是英文 tram。瑞士人不说德国的 Straßenbahn。"
+    }
+   ],
+   "points": [
+    {
+     "t": "nöd = 不",
+     "b": "标准德语的 nicht（不），苏黎世话说 nöd。放在动词后面：Ich verstah nöd（我不懂），Ich bin nöd vo da（我不是这里的）。",
+     "ex": [
+      {
+       "w": "Ich weiss es nöd.",
+       "zh": "我不知道。"
+      }
+     ]
+    },
+    {
+     "t": "救命三连",
+     "b": "听不懂时，连着说这三句，对方一定会放慢、换英语或者比划给你看。瑞士人英语普遍很好，但你先说一句瑞士话，他们会特别开心。",
+     "ex": [
+      {
+       "w": "Exgüsi, ich verstah nöd.",
+       "zh": "不好意思，我听不懂。"
+      },
+      {
+       "w": "Langsam, bitte.",
+       "zh": "请慢一点。"
+      },
+      {
+       "w": "Reded Sie Änglisch?",
+       "zh": "您会说英语吗？"
+      }
+     ]
+    },
+    {
+     "t": "问路：Wo isch + 地方？",
+     "b": "前面加个 Exgüsi 更礼貌。",
+     "ex": [
+      {
+       "w": "Exgüsi, wo isch d Haltestell?",
+       "zh": "打扰一下，车站在哪里？"
+      }
+     ]
+    }
+   ],
+   "dialog": [
+    {
+     "s": "你",
+     "w": "Exgüsi, gaht das Tram zum Bellevue?",
+     "zh": "打扰一下，这趟电车去 Bellevue 吗？",
+     "b": 1
+    },
+    {
+     "s": "老先生",
+     "w": "Jaja, das isch de Vierer. Bim Bellevue müend Sie usstiige.",
+     "zh": "对对，这是 4 路。到 Bellevue 您要下车。"
+    },
+    {
+     "s": "你",
+     "w": "Exgüsi, ich verstah nöd. Langsam, bitte.",
+     "zh": "不好意思，我听不懂。请慢一点。",
+     "b": 1
+    },
+    {
+     "s": "老先生",
+     "w": "Bellevue: usstiige. Ganz eifach!",
+     "zh": "Bellevue：下车。很简单！"
+    },
+    {
+     "s": "你",
+     "w": "Merci vilmal!",
+     "zh": "非常感谢！"
+    }
+   ],
+   "culture": "苏黎世的电车是蓝白色的，准点得像钟表。车上司机不卖票，要在上车前用站台的售票机或手机 App 买好。车上偶尔有查票员，没票会被罚款。",
+   "quiz": [
+    {
+     "q": "对方说话太快，你想请他慢一点：",
+     "opts": [
+      {
+       "w": "Langsam, bitte.",
+       "ok": 1
+      },
+      {
+       "w": "Grad us."
+      },
+      {
+       "w": "Süsch no öppis?"
+      }
+     ],
+     "why": "langsam = 慢。"
+    },
+    {
+     "q": "“Ich verstah nöd” 的意思是：",
+     "opts": [
+      {
+       "w": "Ich verstah nöd.",
+       "zh": "我听不懂。",
+       "ok": 1
+      },
+      {
+       "w": "Ich verstah nöd.",
+       "zh": "我不是本地人。"
+      },
+      {
+       "w": "Ich verstah nöd.",
+       "zh": "我要下车。"
+      }
+     ],
+     "why": "verstah = 懂，nöd = 不。",
+     "zhOpts": 1
+    },
+    {
+     "q": "你想问车站在哪里：",
+     "opts": [
+      {
+       "w": "Wo isch d Haltestell?",
+       "ok": 1
+      },
+      {
+       "w": "Was choschtet das?"
+      },
+      {
+       "w": "Ich bin nöd vo da."
+      }
+     ],
+     "why": "Wo isch … = ……在哪里。"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "place": "Kafi am See",
+   "placeZh": "湖边咖啡馆",
+   "title": "Zahle, bitte!",
+   "titleZh": "点饮料、结账",
+   "story": "第一周的最后一天，Vreni 约你在湖边的咖啡馆坐坐。阳光照在苏黎世湖上，天鹅慢悠悠地游过。Vreni 说：“今天你来点单，我只负责喝。”",
+   "vocab": [
+    {
+     "w": "Isch da no frei?",
+     "zh": "这里有人坐吗？",
+     "hz": "伊施 达 诺 *弗莱*",
+     "de": "Ist hier noch frei?",
+     "en": "Is this seat free?",
+     "mem": "几乎是英文：Is there … free?"
+    },
+    {
+     "w": "Was nämed Sie?",
+     "zh": "您要点什么？（服务员常说）",
+     "hz": "瓦斯 *奈*-梅德 西",
+     "de": "Was nehmen Sie?",
+     "en": "What will you have?",
+     "mem": "näme ≈ take（拿）。“What do you take?”"
+    },
+    {
+     "w": "Ich nimm …",
+     "say": "Ich nimm en Kafi.",
+     "zh": "我要……",
+     "hz": "伊赫 *宁*姆 ……",
+     "de": "Ich nehme …",
+     "en": "I'll have …",
+     "mem": "nimm 谐音“拎”：我拎这个。"
+    },
+    {
+     "w": "en Kafi",
+     "zh": "一杯咖啡",
+     "hz": "恩 *卡*-菲",
+     "de": "einen Kaffee",
+     "en": "a coffee",
+     "mem": "Kafi = coffee，-i 结尾很瑞士。"
+    },
+    {
+     "w": "e Schale",
+     "zh": "一杯牛奶咖啡",
+     "hz": "诶 *沙*-勒",
+     "de": "ein Milchkaffee",
+     "en": "a milky coffee",
+     "mem": "Schale 是“碗”（英文 shell，贝壳）——牛奶咖啡以前用大碗装。"
+    },
+    {
+     "w": "es Mineral",
+     "zh": "一瓶矿泉水",
+     "hz": "埃斯 米-讷-*拉*尔",
+     "de": "ein Mineralwasser",
+     "en": "a mineral water",
+     "mem": "就是 mineral（water）。服务员会问 mit oder ohni?——带气还是不带气。"
+    },
+    {
+     "w": "mit oder ohni?",
+     "zh": "带气的还是不带气的？",
+     "hz": "米特 *欧*德 *欧*-尼",
+     "de": "mit oder ohne?",
+     "en": "with or without?",
+     "mem": "mit = with，ohni = without。"
+    },
+    {
+     "w": "Proscht!",
+     "zh": "干杯！",
+     "hz": "*普罗*施特",
+     "de": "Prost!",
+     "en": "Cheers!",
+     "mem": "Prost 加一个瑞士式的 sch。"
+    },
+    {
+     "w": "En Guete!",
+     "zh": "吃好喝好！（开吃前说）",
+     "hz": "恩 *古*-诶-特",
+     "de": "Guten Appetit!",
+     "en": "Enjoy your meal!",
+     "mem": "Guete ≈ good：祝你吃个“好”。"
+    },
+    {
+     "w": "Zahle, bitte!",
+     "zh": "买单！",
+     "hz": "*察*-勒，*比*-特",
+     "de": "Zahlen, bitte!",
+     "en": "The bill, please!",
+     "mem": "zahle ≈ tally（结账）。"
+    },
+    {
+     "w": "Zäme oder separat?",
+     "zh": "一起付还是分开付？",
+     "hz": "*才*-梅 *欧*德 塞-帕-*拉*特",
+     "de": "Zusammen oder getrennt?",
+     "en": "Together or separately?",
+     "mem": "zäme = together（和 Grüezi mitenand 是一家人，都是“一起”）；separat = separate。"
+    },
+    {
+     "w": "Stimmt so.",
+     "zh": "不用找了。",
+     "hz": "*施廷*姆特 索",
+     "de": "Stimmt so.",
+     "en": "Keep the change.",
+     "mem": "“That's right like that”——就这样，正好。"
+    }
+   ],
+   "points": [
+    {
+     "t": "点饮料：Ich nimm + 东西",
+     "b": "和第二课的 Ich hett gärn 一样好用，咖啡馆里更随意一点。",
+     "ex": [
+      {
+       "w": "Ich nimm e Schale, bitte.",
+       "zh": "我要一杯牛奶咖啡。"
+      },
+      {
+       "w": "Ich nimm es Mineral, ohni.",
+       "zh": "我要一瓶不带气的矿泉水。"
+      }
+     ]
+    },
+    {
+     "t": "结账要叫服务员",
+     "b": "瑞士的咖啡馆一般不会主动给你账单，要举手说 Zahle, bitte!。服务员常问 Zäme oder separat?，朋友之间各付各的很普遍。",
+     "ex": [
+      {
+       "w": "Zahle, bitte!",
+       "zh": "买单！"
+      }
+     ]
+    },
+    {
+     "t": "小费：凑个整就行",
+     "b": "瑞士的价格里已经含了服务费。给小费不是必须的，通常凑个整数，说 Stimmt so。比如账单 9.80，给 10 法郎。",
+     "ex": [
+      {
+       "w": "Zäh Franke. Stimmt so!",
+       "zh": "十法郎，不用找了！"
+      }
+     ]
+    }
+   ],
+   "dialog": [
+    {
+     "s": "服务员",
+     "w": "Grüezi mitenand! Was nämed Sie?",
+     "zh": "两位好！要点什么？"
+    },
+    {
+     "s": "你",
+     "w": "Ich nimm e Schale, bitte. Und es Mineral.",
+     "zh": "我要一杯牛奶咖啡，还有一瓶矿泉水。",
+     "b": 1
+    },
+    {
+     "s": "服务员",
+     "w": "Mit oder ohni?",
+     "zh": "带气还是不带气？"
+    },
+    {
+     "s": "你",
+     "w": "Ohni, bitte.",
+     "zh": "不带气的，谢谢。"
+    },
+    {
+     "s": "Vreni",
+     "w": "Proscht!",
+     "zh": "干杯！"
+    },
+    {
+     "s": "你",
+     "w": "Zahle, bitte!",
+     "zh": "买单！",
+     "b": 1
+    },
+    {
+     "s": "服务员",
+     "w": "Zäme oder separat?",
+     "zh": "一起还是分开？"
+    },
+    {
+     "s": "你",
+     "w": "Zäme. Zäh Franke. Stimmt so!",
+     "zh": "一起。十法郎，不用找了！",
+     "b": 1
+    },
+    {
+     "s": "服务员",
+     "w": "Merci vilmal!",
+     "zh": "非常感谢！"
+    }
+   ],
+   "culture": "瑞士人碰杯说 Proscht 的时候，一定要看着对方的眼睛，挨个碰完才喝。开吃前大家互相说 En Guete。苏黎世湖边夏天可以直接下湖游泳，城里有好几个老式木头浴场，叫 Badi。",
+   "quiz": [
+    {
+     "q": "服务员问 “Mit oder ohni?”，她在问：",
+     "opts": [
+      {
+       "w": "Mit oder ohni?",
+       "zh": "矿泉水带不带气",
+       "ok": 1
+      },
+      {
+       "w": "Mit oder ohni?",
+       "zh": "要不要加糖"
+      },
+      {
+       "w": "Mit oder ohni?",
+       "zh": "要不要打包"
+      }
+     ],
+     "why": "点矿泉水时，服务员会问要带气（mit）还是不带气（ohni）。",
+     "zhOpts": 1
+    },
+    {
+     "q": "吃完了想结账，你举手说：",
+     "opts": [
+      {
+       "w": "Zahle, bitte!",
+       "ok": 1
+      },
+      {
+       "w": "En Guete!"
+      },
+      {
+       "w": "Proscht!"
+      }
+     ],
+     "why": "Zahle, bitte = 买单。"
+    },
+    {
+     "q": "账单 9.80 法郎，你给了 10 法郎，想说不用找了：",
+     "opts": [
+      {
+       "w": "Stimmt so.",
+       "ok": 1
+      },
+      {
+       "w": "Das isch tüür!"
+      },
+      {
+       "w": "Zäme oder separat?"
+      }
+     ],
+     "why": "Stimmt so = 不用找了。"
+    }
+   ]
+  }
+ ],
+ "soon": [
+  {
+   "place": "Hotel",
+   "placeZh": "酒店前台",
+   "titleZh": "入住、问时间"
+  },
+  {
+   "place": "Coop",
+   "placeZh": "超市",
+   "titleZh": "超市买东西、找东西"
+  },
+  {
+   "place": "Zürichsee",
+   "placeZh": "湖上游船",
+   "titleZh": "天气、闲聊"
+  },
+  {
+   "place": "Altstadt",
+   "placeZh": "老城区",
+   "titleZh": "问路进阶、看地图"
+  },
+  {
+   "place": "Restaurant",
+   "placeZh": "餐厅",
+   "titleZh": "点菜、说喜欢不喜欢"
+  }
+ ],
+ "guide": [
+  {
+   "t": "ü",
+   "b": "就是拼音的 ü：嘴撅圆，舌头念“衣”。",
+   "ex": [
+    {
+     "w": "Grüezi",
+     "zh": "你好"
+    },
+    {
+     "w": "drü",
+     "zh": "三"
+    }
+   ]
+  },
+  {
+   "t": "ö",
+   "b": "嘴形摆成“欧”，舌头念“诶”。有点像英文 bird 里的 ir，但嘴更圆。",
+   "ex": [
+    {
+     "w": "nöd",
+     "zh": "不"
+    },
+    {
+     "w": "schön",
+     "zh": "美好"
+    }
+   ]
+  },
+  {
+   "t": "ä",
+   "b": "嘴张得很大的“诶”，像英文 cat 里的 a。",
+   "ex": [
+    {
+     "w": "zäh",
+     "zh": "十"
+    },
+    {
+     "w": "sächs",
+     "zh": "六"
+    }
+   ]
+  },
+  {
+   "t": "ch",
+   "b": "从喉咙后面擦出来的“喝”，比拼音 h 更粗、更响。瑞士人说得特别重。",
+   "ex": [
+    {
+     "w": "acht",
+     "zh": "八"
+    },
+    {
+     "w": "Chuchichäschtli",
+     "zh": "小厨柜"
+    }
+   ]
+  },
+  {
+   "t": "k 变成 ch",
+   "b": "标准德语的 k，苏黎世话常常念成上面那个 ch。",
+   "ex": [
+    {
+     "w": "Chan ich mit Charte zahle?",
+     "zh": "可以刷卡吗？"
+    }
+   ]
+  },
+  {
+   "t": "ie、ue、üe 拆成两段",
+   "b": "标准德语里这些是一个长音，瑞士话要拆成两小段：ue 念“乌-诶”，üe 念“ü-诶”。",
+   "ex": [
+    {
+     "w": "Guet",
+     "zh": "好"
+    },
+    {
+     "w": "Grüezi",
+     "zh": "你好"
+    }
+   ]
+  },
+  {
+   "t": "st、sp 念成“施特”“施普”",
+   "b": "st 不念“斯特”，要念“施特”（舌头卷一点）。",
+   "ex": [
+    {
+     "w": "Was choschtet das?",
+     "zh": "多少钱？"
+    }
+   ]
+  },
+  {
+   "t": "词尾的 n 常被吞掉",
+   "b": "标准德语里结尾的 -en，瑞士话常常只说 -e。",
+   "ex": [
+    {
+     "w": "sibe",
+     "zh": "七（标准德语 sieben）"
+    },
+    {
+     "w": "Und Ihne?",
+     "zh": "您呢？（标准德语 Ihnen）"
+    }
+   ]
+  },
+  {
+   "t": "重音在前面",
+   "b": "大多数瑞士德语词，重音落在第一个音节。注音里加粗的就是要重读的部分。",
+   "ex": []
+  }
+ ]
+}
