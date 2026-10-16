@@ -1,5 +1,7 @@
 # 苏黎世一个月 · Ein Monat z Züri
 
+**在线学习：https://cyndiscitokyo.github.io/swiss-german/**
+
 一个学瑞士德语（苏黎世话）的小网站：跟着房东 Vreni 在苏黎世住一个月，每一课是城里的一站。
 每课先学（故事 → 单词 → 说法 → 对话），四步都看过才能做练习。
 
